@@ -1,8 +1,9 @@
-import type { EnteFile } from "@/media/file";
-import { FileType } from "@/media/file-type";
+import type { EnteFile } from "ente-media/file";
+import { FileType } from "ente-media/file-type";
 import { downloadManager } from "./download";
 import { generateVideoPreviewVariantWeb } from "./ffmpeg";
 
+// TODO(HLS): Move me to video.ts
 /**
  * Create a preview variant of the given video {@link file}.
  *

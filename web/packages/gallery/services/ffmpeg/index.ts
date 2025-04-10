@@ -1,17 +1,20 @@
-import { ensureElectron } from "@/base/electron";
-import log from "@/base/log";
-import type { Electron } from "@/base/types/ipc";
+import { ensureElectron } from "ente-base/electron";
+import log from "ente-base/log";
+import type { Electron } from "ente-base/types/ipc";
 import {
     toDataOrPathOrZipEntry,
     type DesktopUploadItem,
     type UploadItem,
-} from "@/gallery/services/upload";
+} from "ente-gallery/services/upload";
 import {
     readConvertToMP4Done,
     readConvertToMP4Stream,
     writeConvertToMP4Stream,
-} from "@/gallery/utils/native-stream";
-import { parseMetadataDate, type ParsedMetadata } from "@/media/file-metadata";
+} from "ente-gallery/utils/native-stream";
+import {
+    parseMetadataDate,
+    type ParsedMetadata,
+} from "ente-media/file-metadata";
 import {
     ffmpegPathPlaceholder,
     inputPathPlaceholder,
@@ -100,7 +103,7 @@ const makeGenThumbnailCommand = (seekTime: number) => [
  * of videos that the user is uploading.
  *
  * @param uploadItem A {@link File}, or the absolute path to a file on the
- * user's local file sytem. A path can only be provided when we're running in
+ * user's local file system. A path can only be provided when we're running in
  * the context of our desktop app.
  */
 export const extractVideoMetadata = async (
