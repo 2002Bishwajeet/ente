@@ -2,10 +2,10 @@ import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import "package:flutter_web_auth_2/flutter_web_auth_2.dart";
 import "package:odin_dart/odin_lib.dart";
 
 final DotYouClient dotYouClient = DotYouClient.create(
@@ -36,6 +36,11 @@ const TargetDrive photoDrive = TargetDrive(
   alias: '6483b7b1f71bd43eb6896c86148668cc',
   type: '2af68fe72fb84896f39f97c59d60813a',
 );
+
+/// Secure Storage Constants
+const String _appAuthToken = 'APP_AUTH_TOKEN';
+const String _appSharedSecret = 'APP_SHARED_SECRET';
+const String _appIdentity = 'IDENTITY';
 
 final AuthenticationProvider authenticationProvider = AuthenticationProvider(dotYouClient);
 
@@ -130,9 +135,10 @@ class AuthenticationNotifier {
 
     final result = await FlutterWebAuth2.authenticate(
       url: _regUrl(domain, authorizationParams),
-      callbackUrlScheme: 'homebase',
+      callbackUrlScheme: 'ente',
       options: const FlutterWebAuth2Options(
         preferEphemeral: true,
+        useWebview: true,
       ),
     );
     final Map<String, dynamic> queryParams = Uri.parse(result).queryParameters;
@@ -148,9 +154,9 @@ class AuthenticationNotifier {
       salt: salt,
     );
 
-    await _storage.write(key: appIdentity, value: identity);
-    await _storage.write(key: appSharedSecret, value: sharedSecret);
-    await _storage.write(key: appAuthToken, value: clientAuthToken);
+    await _storage.write(key: _appIdentity, value: identity);
+    await _storage.write(key: _appSharedSecret, value: sharedSecret);
+    await _storage.write(key: _appAuthToken, value: clientAuthToken);
 
     // ref.read(tokensProvider.notifier).update((state) => appData);
 
@@ -161,15 +167,15 @@ class AuthenticationNotifier {
     await _authenticationProvider.logOut();
 
     await Future.wait([
-      _storage.delete(key: appIdentity),
-      _storage.delete(key: appAuthToken),
-      _storage.delete(key: appSharedSecret),
+      _storage.delete(key: _appIdentity),
+      _storage.delete(key: _appAuthToken),
+      _storage.delete(key: _appSharedSecret),
     ]);
   }
 
   /// Whether it has a valid Token or not
-  Future<AuthenticationStatus> verifyToken() async {
-    final isValid = await _authenticationProvider.hasValidToken().onError((error, stackTrace) {
+  Future<bool> verifyToken() async {
+    return await _authenticationProvider.hasValidToken().onError((error, stackTrace) {
       log('Error while verifying token', error: error, stackTrace: stackTrace);
       if (error is DioException) {
         if (error.error is SocketException) {
@@ -178,6 +184,5 @@ class AuthenticationNotifier {
       }
       return false;
     });
-    return isValid ? AuthenticationStatus.authenticated : AuthenticationStatus.unauthenticated;
   }
 }
