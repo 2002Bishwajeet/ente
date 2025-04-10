@@ -105,6 +105,15 @@
         </receiver>
     </application>
 
+    <activity android:name="com.linusu.flutter_web_auth_2.CallbackActivity" android:exported="true">
+        <intent-filter android:label="flutter_web_auth_2">
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="ente://?" />
+        </intent-filter>
+    </activity>
+
     <!-- Android 11: https://developer.android.com/preview/privacy/package-visibility -->
     <!-- https://developer.android.com/training/package-visibility/use-cases -->
     <queries>

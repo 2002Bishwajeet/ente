@@ -6,7 +6,6 @@ import 'package:background_fetch/background_fetch.dart';
 import "package:computer/computer.dart";
 import 'package:ente_crypto/ente_crypto.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import "package:flutter/rendering.dart";
 import "package:flutter/services.dart";
@@ -99,11 +98,9 @@ Future<void> _runInForeground(AdaptiveThemeMode? savedThemeMode) async {
     final Locale? locale = await getLocale(noFallback: true);
     runApp(
       AppLock(
-        builder: (args) =>
-            EnteApp(_runBackgroundTask, _killBGTask, locale, savedThemeMode),
+        builder: (args) => EnteApp(_runBackgroundTask, _killBGTask, locale, savedThemeMode),
         lockScreen: const LockScreen(),
-        enabled: await Configuration.instance.shouldShowLockScreen() ||
-            localSettings.isOnGuestView(),
+        enabled: await Configuration.instance.shouldShowLockScreen() || localSettings.isOnGuestView(),
         locale: locale,
         lightTheme: lightThemeData,
         darkTheme: darkThemeData,
@@ -234,8 +231,7 @@ Future<void> _init(bool isBackground, {String via = ''}) async {
     await NetworkClient.instance.init(packageInfo);
     _logger.info("NetworkClient init done $tlog");
 
-    ServiceLocator.instance
-        .init(preferences, NetworkClient.instance.enteDio, packageInfo);
+    ServiceLocator.instance.init(preferences, NetworkClient.instance.enteDio, packageInfo);
 
     _logger.info("UserService init $tlog");
     await UserService.instance.init();
@@ -266,9 +262,7 @@ Future<void> _init(bool isBackground, {String via = ''}) async {
     _logger.info("SyncService init done $tlog");
 
     _logger.info("RemoteFileMLService done $tlog");
-    if (!isBackground &&
-        Platform.isAndroid &&
-        await HomeWidgetService.instance.countHomeWidgets() == 0) {
+    if (!isBackground && Platform.isAndroid && await HomeWidgetService.instance.countHomeWidgets() == 0) {
       unawaited(HomeWidgetService.instance.initHomeWidget());
     }
 
@@ -327,7 +321,7 @@ Future _runWithLogs(Function() function, {String prefix = ""}) async {
       body: function,
       logDirPath: (await getApplicationSupportDirectory()).path + "/logs",
       maxLogFiles: 5,
-      sentryDsn: kDebugMode ? sentryDebugDSN : sentryDSN,
+      // sentryDsn: kDebugMode ? sentryDebugDSN : sentryDSN,
       tunnel: sentryTunnel,
       enableInDebugMode: true,
       prefix: prefix,
@@ -387,8 +381,7 @@ Future<bool> _isRunningInForeground() async {
   final lastFGHeartBeatTime = DateTime.fromMicrosecondsSinceEpoch(
     prefs.getInt(kLastFGTaskHeartBeatTime) ?? 0,
   );
-  return lastFGHeartBeatTime.microsecondsSinceEpoch >
-      (currentTime - kFGTaskDeathTimeoutInMicroseconds);
+  return lastFGHeartBeatTime.microsecondsSinceEpoch > (currentTime - kFGTaskDeathTimeoutInMicroseconds);
 }
 
 Future<void> _killBGTask([String? taskId]) async {
@@ -436,9 +429,8 @@ Future<void> _logFGHeartBeatInfo(SharedPreferences prefs) async {
   final bool isRunningInFG = await _isRunningInForeground();
   await prefs.reload();
   final lastFGTaskHeartBeatTime = prefs.getInt(kLastFGTaskHeartBeatTime) ?? 0;
-  final String lastRun = lastFGTaskHeartBeatTime == 0
-      ? 'never'
-      : DateTime.fromMicrosecondsSinceEpoch(lastFGTaskHeartBeatTime).toString();
+  final String lastRun =
+      lastFGTaskHeartBeatTime == 0 ? 'never' : DateTime.fromMicrosecondsSinceEpoch(lastFGTaskHeartBeatTime).toString();
   _logger.info('isAlreadyRunningFG: $isRunningInFG, last Beat: $lastRun');
 }
 

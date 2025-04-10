@@ -627,6 +627,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "continueLabel": MessageLookupByLibrary.simpleMessage("Continue"),
         "continueOnFreeTrial":
             MessageLookupByLibrary.simpleMessage("Continue on free trial"),
+        "continueWithHomebase":
+            MessageLookupByLibrary.simpleMessage("Continue with Homebase"),
         "convertToAlbum":
             MessageLookupByLibrary.simpleMessage("Convert to album"),
         "copyEmailAddress":
@@ -1001,6 +1003,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "hideSharedItemsFromHomeGallery": MessageLookupByLibrary.simpleMessage(
             "Hide shared items from home gallery"),
         "hiding": MessageLookupByLibrary.simpleMessage("Hiding..."),
+        "homebaseId": MessageLookupByLibrary.simpleMessage("homebase.id"),
         "hostedAtOsmFrance":
             MessageLookupByLibrary.simpleMessage("Hosted at OSM France"),
         "howItWorks": MessageLookupByLibrary.simpleMessage("How it works"),
@@ -1751,6 +1754,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "startAccountRecoveryTitle":
             MessageLookupByLibrary.simpleMessage("Start recovery"),
         "startBackup": MessageLookupByLibrary.simpleMessage("Start backup"),
+        "startWithHomebase":
+            MessageLookupByLibrary.simpleMessage("Get Started with Homebase!"),
         "status": MessageLookupByLibrary.simpleMessage("Status"),
         "stopCastingBody": MessageLookupByLibrary.simpleMessage(
             "Do you want to stop casting?"),

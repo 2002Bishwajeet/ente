@@ -50,6 +50,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Continue with Homebase`
+  String get continueWithHomebase {
+    return Intl.message(
+      'Continue with Homebase',
+      name: 'continueWithHomebase',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Enter your email address`
   String get enterYourEmailAddress {
     return Intl.message(
@@ -95,6 +105,16 @@ class S {
     return Intl.message(
       'Email',
       name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `homebase.id`
+  String get homebaseId {
+    return Intl.message(
+      'homebase.id',
+      name: 'homebaseId',
       desc: '',
       args: [],
     );
@@ -885,6 +905,16 @@ class S {
     return Intl.message(
       'Welcome back!',
       name: 'welcomeBack',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get Started with Homebase!`
+  String get startWithHomebase {
+    return Intl.message(
+      'Get Started with Homebase!',
+      name: 'startWithHomebase',
       desc: '',
       args: [],
     );

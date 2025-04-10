@@ -11,6 +11,7 @@ import "package:photos/generated/l10n.dart";
 import "package:photos/l10n/l10n.dart";
 import "package:photos/service_locator.dart";
 import 'package:photos/ui/account/email_entry_page.dart';
+import "package:photos/ui/account/homebase_login_page.dart";
 import 'package:photos/ui/account/login_page.dart';
 import 'package:photos/ui/account/password_entry_page.dart';
 import 'package:photos/ui/account/password_reentry_page.dart';
@@ -128,8 +129,7 @@ class _LandingPageWidgetState extends State<LandingPageWidget> {
               dotsCount: 3,
               position: _featureIndex,
               decorator: DotsDecorator(
-                activeColor:
-                    Theme.of(context).colorScheme.dotsIndicatorActiveColor,
+                activeColor: Theme.of(context).colorScheme.dotsIndicatorActiveColor,
                 color: Theme.of(context).colorScheme.dotsIndicatorInactiveColor,
                 activeShape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(3),
@@ -148,13 +148,17 @@ class _LandingPageWidgetState extends State<LandingPageWidget> {
             _getSignUpButton(context),
             Container(
               width: double.infinity,
-              padding: const EdgeInsets.fromLTRB(20, 12, 20, 28),
+              padding: const EdgeInsets.fromLTRB(
+                20,
+                12,
+                20,
+                12,
+              ),
               child: Hero(
                 tag: "log_in",
                 child: ElevatedButton(
                   key: const ValueKey("signInButton"),
-                  style:
-                      Theme.of(context).colorScheme.optionalActionButtonStyle,
+                  style: Theme.of(context).colorScheme.optionalActionButtonStyle,
                   onPressed: _navigateToSignInPage,
                   child: Text(
                     S.of(context).existingUser,
@@ -165,6 +169,26 @@ class _LandingPageWidgetState extends State<LandingPageWidget> {
                 ),
               ),
             ),
+
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+              child: Hero(
+                tag: "homebase_login",
+                child: ElevatedButton(
+                  key: const ValueKey("homebaseSignInButton"),
+                  style: Theme.of(context).colorScheme.homebaseActionButtonStyle,
+                  onPressed: _navigateToHomebasePage,
+                  child: Text(
+                    S.of(context).continueWithHomebase,
+                    style: const TextStyle(
+                      color: Colors.white, // same for both themes
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
             // const DeveloperSettingsWidget() does not refresh when the endpoint is changed
             // ignore: prefer_const_constructors
             DeveloperSettingsWidget(),
@@ -209,9 +233,7 @@ class _LandingPageWidgetState extends State<LandingPageWidget> {
             "assets/onboarding_sync.png",
             S.of(context).available,
             S.of(context).everywhere,
-            Platform.isAndroid
-                ? S.of(context).androidIosWebDesktop
-                : S.of(context).mobileWebDesktop,
+            Platform.isAndroid ? S.of(context).androidIosWebDesktop : S.of(context).mobileWebDesktop,
           ),
         ],
         onPageChanged: (index) {
@@ -282,6 +304,35 @@ class _LandingPageWidgetState extends State<LandingPageWidget> {
     );
   }
 
+  void _navigateToHomebasePage() {
+    updateService.hideChangeLog().ignore();
+    Widget page;
+    if (Configuration.instance.getEncryptedToken() == null) {
+      page = const HomebaseLoginPage();
+    } else {
+      // No key
+      if (Configuration.instance.getKeyAttributes() == null) {
+        // Never had a key
+        page = const PasswordEntryPage(
+          mode: PasswordEntryMode.set,
+        );
+      } else if (Configuration.instance.getKey() == null) {
+        // Yet to decrypt the key
+        page = const PasswordReentryPage();
+      } else {
+        // All is well, user just has not subscribed
+        page = getSubscriptionPage(isOnBoarding: true);
+      }
+    }
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (BuildContext context) {
+          return page;
+        },
+      ),
+    );
+  }
+
   Future<void> _showAutoLogoutDialogIfRequired() async {
     final bool autoLogout = Configuration.instance.showAutoLogoutDialog();
     if (autoLogout) {
@@ -307,10 +358,7 @@ class _LandingPageWidgetState extends State<LandingPageWidget> {
 }
 
 class FeatureItemWidget extends StatelessWidget {
-  final String assetPath,
-      featureTitleFirstLine,
-      featureTitleSecondLine,
-      subText;
+  final String assetPath, featureTitleFirstLine, featureTitleSecondLine, subText;
 
   const FeatureItemWidget(
     this.assetPath,

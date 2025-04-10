@@ -137,6 +137,8 @@ dependencies:
   nanoid: ^1.0.0
   native_dio_adapter: ^1.4.0
   native_video_player: ^3.0.0-dev.4
+  odin_dart:
+    path: "../../transit-lib-dart"
   onnx_dart:
     path: plugins/onnx_dart
   onnxruntime:

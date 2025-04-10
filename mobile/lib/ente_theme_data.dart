@@ -10,8 +10,7 @@ final lightThemeData = ThemeData(
   primaryColor: const Color.fromRGBO(255, 110, 64, 1),
   primaryColorLight: const Color.fromRGBO(0, 0, 0, 0.541),
   iconTheme: const IconThemeData(color: Colors.black),
-  primaryIconTheme:
-      const IconThemeData(color: Colors.red, opacity: 1.0, size: 50.0),
+  primaryIconTheme: const IconThemeData(color: Colors.red, opacity: 1.0, size: 50.0),
   colorScheme: const ColorScheme.light(
     primary: Colors.black,
     secondary: Color.fromARGB(255, 163, 163, 163),
@@ -88,8 +87,7 @@ final darkThemeData = ThemeData(
   brightness: Brightness.dark,
   primaryColorLight: const Color.fromRGBO(255, 255, 255, 0.702),
   iconTheme: const IconThemeData(color: Colors.white),
-  primaryIconTheme:
-      const IconThemeData(color: Colors.red, opacity: 1.0, size: 50.0),
+  primaryIconTheme: const IconThemeData(color: Colors.red, opacity: 1.0, size: 50.0),
   hintColor: const Color.fromRGBO(158, 158, 158, 1),
   colorScheme: const ColorScheme.dark(
     primary: Colors.white,
@@ -222,46 +220,41 @@ TextTheme _buildTextTheme(Color textColor) {
 }
 
 extension CustomColorScheme on ColorScheme {
-  Color get videoPlayerPrimaryColor => brightness == Brightness.light
-      ? const Color.fromRGBO(0, 179, 60, 1)
-      : const Color.fromRGBO(1, 222, 77, 1);
+  Color get videoPlayerPrimaryColor =>
+      brightness == Brightness.light ? const Color.fromRGBO(0, 179, 60, 1) : const Color.fromRGBO(1, 222, 77, 1);
 
-  Color get videoPlayerBackgroundColor => brightness == Brightness.light
-      ? const Color(0xFFF5F5F5)
-      : const Color(0xFF252525);
+  Color get videoPlayerBackgroundColor =>
+      brightness == Brightness.light ? const Color(0xFFF5F5F5) : const Color(0xFF252525);
 
-  Color get videoPlayerBorderColor => brightness == Brightness.light
-      ? const Color(0xFF424242)
-      : const Color(0xFFFFFFFF);
+  Color get videoPlayerBorderColor =>
+      brightness == Brightness.light ? const Color(0xFF424242) : const Color(0xFFFFFFFF);
 
-  Color get defaultBackgroundColor =>
-      brightness == Brightness.light ? backgroundBaseLight : backgroundBaseDark;
+  Color get defaultBackgroundColor => brightness == Brightness.light ? backgroundBaseLight : backgroundBaseDark;
 
-  Color get inverseBackgroundColor =>
-      brightness != Brightness.light ? backgroundBaseLight : backgroundBaseDark;
+  Color get inverseBackgroundColor => brightness != Brightness.light ? backgroundBaseLight : backgroundBaseDark;
 
-  Color get defaultTextColor =>
-      brightness == Brightness.light ? textBaseLight : textBaseDark;
+  Color get defaultTextColor => brightness == Brightness.light ? textBaseLight : textBaseDark;
 
-  Color get inverseTextColor =>
-      brightness != Brightness.light ? textBaseLight : textBaseDark;
+  Color get inverseTextColor => brightness != Brightness.light ? textBaseLight : textBaseDark;
 
-  Color get boxSelectColor => brightness == Brightness.light
-      ? const Color.fromRGBO(67, 186, 108, 1)
-      : const Color.fromRGBO(16, 32, 32, 1);
+  Color get boxSelectColor =>
+      brightness == Brightness.light ? const Color.fromRGBO(67, 186, 108, 1) : const Color.fromRGBO(16, 32, 32, 1);
 
-  Color get boxUnSelectColor => brightness == Brightness.light
-      ? const Color.fromRGBO(240, 240, 240, 1)
-      : const Color.fromRGBO(8, 18, 18, 0.4);
+  Color get boxUnSelectColor =>
+      brightness == Brightness.light ? const Color.fromRGBO(240, 240, 240, 1) : const Color.fromRGBO(8, 18, 18, 0.4);
 
   Color get greenAlternative => const Color.fromRGBO(45, 194, 98, 1.0);
 
-  Color get dynamicFABBackgroundColor => brightness == Brightness.light
-      ? const Color.fromRGBO(0, 0, 0, 1)
-      : const Color.fromRGBO(48, 48, 48, 1);
+  Color get dynamicFABBackgroundColor =>
+      brightness == Brightness.light ? const Color.fromRGBO(0, 0, 0, 1) : const Color.fromRGBO(48, 48, 48, 1);
 
-  Color get dynamicFABTextColor =>
-      const Color.fromRGBO(255, 255, 255, 1); //same for both themes
+  Color get dynamicFABTextColor => const Color.fromRGBO(255, 255, 255, 1); //same for both themes
+
+  ButtonStyle? get homebaseActionButtonStyle => buildElevatedButtonThemeData(
+        onPrimary: const Color(0xFF7A4FB3),
+        primary: const Color(0xFF603E90),
+        elevation: 0,
+      ).style;
 
   // todo: use brightness == Brightness.light for changing color for dark/light theme
   ButtonStyle? get optionalActionButtonStyle => buildElevatedButtonThemeData(
@@ -270,21 +263,18 @@ extension CustomColorScheme on ColorScheme {
         elevation: 0,
       ).style;
 
-  Color get recoveryKeyBoxColor => brightness == Brightness.light
-      ? const Color.fromRGBO(49, 155, 86, 0.2)
-      : const Color(0xFF1DB954);
+  Color get recoveryKeyBoxColor =>
+      brightness == Brightness.light ? const Color.fromRGBO(49, 155, 86, 0.2) : const Color(0xFF1DB954);
 
-  Color get frostyBlurBackdropFilterColor => brightness == Brightness.light
-      ? const Color.fromRGBO(238, 238, 238, 0.5)
-      : const Color.fromRGBO(48, 48, 48, 0.5);
+  Color get frostyBlurBackdropFilterColor =>
+      brightness == Brightness.light ? const Color.fromRGBO(238, 238, 238, 0.5) : const Color.fromRGBO(48, 48, 48, 0.5);
 
   Color get iconColor => brightness == Brightness.light
       ? const Color.fromRGBO(0, 0, 0, 1).withOpacity(0.75)
       : const Color.fromRGBO(255, 255, 255, 1);
 
-  Color get bgColorForQuestions => brightness == Brightness.light
-      ? const Color.fromRGBO(255, 255, 255, 1)
-      : const Color.fromRGBO(10, 15, 15, 1.0);
+  Color get bgColorForQuestions =>
+      brightness == Brightness.light ? const Color.fromRGBO(255, 255, 255, 1) : const Color.fromRGBO(10, 15, 15, 1.0);
 
   Color get greenText => const Color.fromARGB(255, 40, 190, 113);
 
@@ -308,9 +298,8 @@ extension CustomColorScheme on ColorScheme {
       ? const Color.fromRGBO(196, 196, 196, 0.6)
       : const Color.fromRGBO(255, 255, 255, 0.7);
 
-  Color get galleryThumbBackgroundColor => brightness == Brightness.light
-      ? const Color.fromRGBO(240, 240, 240, 1)
-      : const Color.fromRGBO(20, 20, 20, 1);
+  Color get galleryThumbBackgroundColor =>
+      brightness == Brightness.light ? const Color.fromRGBO(240, 240, 240, 1) : const Color.fromRGBO(20, 20, 20, 1);
 
   Color get galleryThumbDrawColor => brightness == Brightness.light
       ? const Color.fromRGBO(0, 0, 0, 1).withOpacity(0.8)
@@ -328,35 +317,28 @@ extension CustomColorScheme on ColorScheme {
       ? const Color.fromRGBO(0, 0, 0, 1).withOpacity(0.12)
       : const Color.fromRGBO(255, 255, 255, 1).withOpacity(0.12);
 
-  Color get toastTextColor => brightness == Brightness.light
-      ? const Color.fromRGBO(255, 255, 255, 1)
-      : const Color.fromRGBO(0, 0, 0, 1);
+  Color get toastTextColor =>
+      brightness == Brightness.light ? const Color.fromRGBO(255, 255, 255, 1) : const Color.fromRGBO(0, 0, 0, 1);
 
   Color get toastBackgroundColor => brightness == Brightness.light
       ? const Color.fromRGBO(24, 24, 24, 0.95)
       : const Color.fromRGBO(255, 255, 255, 0.95);
 
-  Color get subTextColor => brightness == Brightness.light
-      ? const Color.fromRGBO(180, 180, 180, 1)
-      : const Color.fromRGBO(100, 100, 100, 1);
+  Color get subTextColor =>
+      brightness == Brightness.light ? const Color.fromRGBO(180, 180, 180, 1) : const Color.fromRGBO(100, 100, 100, 1);
 
-  Color get searchResultsColor => brightness == Brightness.light
-      ? const Color.fromRGBO(245, 245, 245, 1.0)
-      : const Color.fromRGBO(30, 30, 30, 1.0);
+  Color get searchResultsColor =>
+      brightness == Brightness.light ? const Color.fromRGBO(245, 245, 245, 1.0) : const Color.fromRGBO(30, 30, 30, 1.0);
 
-  Color get searchResultsCountTextColor => brightness == Brightness.light
-      ? const Color.fromRGBO(80, 80, 80, 1)
-      : const Color.fromRGBO(150, 150, 150, 1);
+  Color get searchResultsCountTextColor =>
+      brightness == Brightness.light ? const Color.fromRGBO(80, 80, 80, 1) : const Color.fromRGBO(150, 150, 150, 1);
 
-  Color get searchResultsBackgroundColor => brightness == Brightness.light
-      ? Colors.black.withOpacity(0.32)
-      : Colors.black.withOpacity(0.64);
+  Color get searchResultsBackgroundColor =>
+      brightness == Brightness.light ? Colors.black.withOpacity(0.32) : Colors.black.withOpacity(0.64);
 
-  EnteTheme get enteTheme =>
-      brightness == Brightness.light ? lightTheme : darkTheme;
+  EnteTheme get enteTheme => brightness == Brightness.light ? lightTheme : darkTheme;
 
-  EnteTheme get inverseEnteTheme =>
-      brightness == Brightness.light ? darkTheme : lightTheme;
+  EnteTheme get inverseEnteTheme => brightness == Brightness.light ? darkTheme : lightTheme;
 }
 
 OutlinedButtonThemeData buildOutlinedButtonThemeData({
@@ -425,8 +407,7 @@ ElevatedButtonThemeData buildElevatedButtonThemeData({
 
 SwitchThemeData getSwitchThemeData(Color activeColor) {
   return SwitchThemeData(
-    thumbColor:
-        WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
+    thumbColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
       if (states.contains(WidgetState.disabled)) {
         return null;
       }
@@ -435,8 +416,7 @@ SwitchThemeData getSwitchThemeData(Color activeColor) {
       }
       return null;
     }),
-    trackColor:
-        WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
+    trackColor: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
       if (states.contains(WidgetState.disabled)) {
         return null;
       }
