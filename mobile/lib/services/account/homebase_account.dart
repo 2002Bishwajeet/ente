@@ -8,6 +8,11 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import "package:flutter_web_auth_2/flutter_web_auth_2.dart";
 import "package:odin_dart/odin_lib.dart";
 
+/// Secure Storage Constants
+const String _appAuthToken = 'APP_AUTH_TOKEN';
+const String _appSharedSecret = 'APP_SHARED_SECRET';
+const String _appIdentity = 'IDENTITY';
+
 final DotYouClient dotYouClient = DotYouClient.create(
   const ProviderOptions(
     hostIdentity: '',
@@ -36,11 +41,6 @@ const TargetDrive photoDrive = TargetDrive(
   alias: '6483b7b1f71bd43eb6896c86148668cc',
   type: '2af68fe72fb84896f39f97c59d60813a',
 );
-
-/// Secure Storage Constants
-const String _appAuthToken = 'APP_AUTH_TOKEN';
-const String _appSharedSecret = 'APP_SHARED_SECRET';
-const String _appIdentity = 'IDENTITY';
 
 final AuthenticationProvider authenticationProvider = AuthenticationProvider(dotYouClient);
 
@@ -132,13 +132,14 @@ class AuthenticationNotifier {
       permissionKeys: _appPermissions.map((e) => e.value).toList(),
       userAgent: deviceName,
     );
+    log("${authorizationParams.toMap()}");
+    log("url ${_regUrl(domain, authorizationParams)}");
 
     final result = await FlutterWebAuth2.authenticate(
       url: _regUrl(domain, authorizationParams),
       callbackUrlScheme: 'ente',
       options: const FlutterWebAuth2Options(
         preferEphemeral: true,
-        useWebview: true,
       ),
     );
     final Map<String, dynamic> queryParams = Uri.parse(result).queryParameters;
@@ -157,6 +158,9 @@ class AuthenticationNotifier {
     await _storage.write(key: _appIdentity, value: identity);
     await _storage.write(key: _appSharedSecret, value: sharedSecret);
     await _storage.write(key: _appAuthToken, value: clientAuthToken);
+    await _storage.write(key: _appIdentity, value: identity);
+    await _storage.write(key: _appSharedSecret, value: sharedSecret);
+    await _storage.write(key: _appAuthToken, value: clientAuthToken);
 
     // ref.read(tokensProvider.notifier).update((state) => appData);
 
@@ -167,6 +171,9 @@ class AuthenticationNotifier {
     await _authenticationProvider.logOut();
 
     await Future.wait([
+      _storage.delete(key: _appIdentity),
+      _storage.delete(key: _appAuthToken),
+      _storage.delete(key: _appSharedSecret),
       _storage.delete(key: _appIdentity),
       _storage.delete(key: _appAuthToken),
       _storage.delete(key: _appSharedSecret),

@@ -9,6 +9,7 @@ import "package:photos/core/network/network.dart";
 import "package:photos/generated/l10n.dart";
 import "package:photos/l10n/l10n.dart";
 import "package:photos/models/api/user/srp.dart";
+import "package:photos/services/account/homebase_account.dart";
 import 'package:photos/services/account/user_service.dart';
 import "package:photos/theme/ente_theme.dart";
 import "package:photos/ui/account/login_pwd_verification_page.dart";
@@ -36,7 +37,9 @@ class _HomebaseLoginPageState extends State<HomebaseLoginPage> {
     _debouncer.cancelDebounceTimer();
     _debouncer.run(() async {
       await updateIdentity(value);
-      setState(() {});
+      setState(() {
+        _identity = value;
+      });
     });
   }
 
@@ -81,13 +84,15 @@ class _HomebaseLoginPageState extends State<HomebaseLoginPage> {
         isFormValid: _identityIsValid,
         buttonText: S.of(context).logInLabel,
         onPressedFunction: () async {
-          await UserService.instance.setEmail(_identity!);
+          final authenticationNotifier = AuthenticationNotifier();
+          await authenticationNotifier.youAuthRegistration(_identity!);
+          // await UserService.instance.setEmail(_identity!);
           Configuration.instance.resetVolatilePassword();
           SrpAttributes? attr;
-          bool isEmailVerificationEnabled = true;
+          const bool isEmailVerificationEnabled = true;
           try {
-            attr = await UserService.instance.getSrpAttributes(_identity!);
-            isEmailVerificationEnabled = attr.isEmailMFAEnabled;
+            // attr = await UserService.instance.getSrpAttributes(_identity!);
+            // isEmailVerificationEnabled = attr.isEmailMFAEnabled;
           } catch (e) {
             if (e is! SrpSetupNotCompleteError) {
               _logger.severe('Error getting SRP attributes', e);
@@ -99,7 +104,7 @@ class _HomebaseLoginPageState extends State<HomebaseLoginPage> {
               MaterialPageRoute(
                 builder: (BuildContext context) {
                   return LoginPasswordVerificationPage(
-                    srpAttributes: attr!,
+                    srpAttributes: attr,
                   );
                 },
               ),

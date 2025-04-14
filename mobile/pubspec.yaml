@@ -176,8 +176,8 @@ dependencies:
       ref: 2cea396
   screenshot: ^3.0.0
   scrollable_positioned_list: ^0.3.5
-  sentry: ^8.13.2
-  sentry_flutter: ^8.13.2
+  sentry: ^8.14.0
+  sentry_flutter: ^8.14.0
   share_plus: ^10.0.2
   shared_preferences: ^2.0.5
   sqflite: ^2.3.0
@@ -274,12 +274,12 @@ dev_dependencies:
 # Sample commit for adding an icon:
 # https://github.com/ente-io/ente/commit/40ae8d91c359447fc2cf6672bfa754c5cc7a6af1
 
-# flutter_icons:
+flutter_icons:
 # ADAPTIVE ICONS
 
 # 1. E + HEART
-# adaptive_icon_foreground: "assets/launcher_icon/icon-foreground.png"
-# adaptive_icon_background: "#08C225"
+adaptive_icon_foreground: "assets/launcher_icon/icon-foreground.png"
+adaptive_icon_background: "#08C225"
 
 # 2. OG
 # adaptive_icon_foreground: "assets/launcher_icon/icon-og-foreground.png"
