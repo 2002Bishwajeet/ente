@@ -4,6 +4,7 @@ import 'dart:io';
 
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/foundation.dart';
+import "package:flutter/services.dart";
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import "package:flutter_web_auth_2/flutter_web_auth_2.dart";
 import "package:odin_dart/odin_lib.dart";
@@ -13,11 +14,7 @@ const String _appAuthToken = 'APP_AUTH_TOKEN';
 const String _appSharedSecret = 'APP_SHARED_SECRET';
 const String _appIdentity = 'IDENTITY';
 
-final DotYouClient dotYouClient = DotYouClient.create(
-  const ProviderOptions(
-    hostIdentity: '',
-  ),
-);
+final DotYouClient dotYouClient = DotYouClient.create(const ProviderOptions(hostIdentity: ''));
 
 const _appPermissions = [
   AppPermissionType.readConnections,
@@ -48,10 +45,8 @@ class AuthenticationNotifier {
   final AuthenticationProvider _authenticationProvider;
   final FlutterSecureStorage _storage;
 
-  AuthenticationNotifier({
-    AuthenticationProvider? authProvider,
-    FlutterSecureStorage? storage,
-  })  : _storage = const FlutterSecureStorage(), // _storage = storage ?? const FlutterSecureStorage(),
+  AuthenticationNotifier({AuthenticationProvider? authProvider, FlutterSecureStorage? storage})
+      : _storage = const FlutterSecureStorage(), // _storage = storage ?? const FlutterSecureStorage(),
         _authenticationProvider = authenticationProvider;
 
   /// Contains the list of drives we need access too
@@ -85,7 +80,7 @@ class AuthenticationNotifier {
 
       return redirectUri.toString();
     } else {
-      return 'homebase://?';
+      return 'ente://?';
     }
   }
 
@@ -126,7 +121,6 @@ class AuthenticationNotifier {
       appId: appId,
       publicKey: eccKey.publicKey,
       drives: _drives,
-      circleDrives: [],
       host: kIsWeb ? domain : null,
       clientFriendlyName: deviceName,
       permissionKeys: _appPermissions.map((e) => e.value).toList(),
@@ -135,12 +129,22 @@ class AuthenticationNotifier {
     log("${authorizationParams.toMap()}");
     log("url ${_regUrl(domain, authorizationParams)}");
 
+    // Before opening WebView
+    await SystemChrome.setEnabledSystemUIMode(
+      SystemUiMode.manual,
+      overlays: [SystemUiOverlay.top, SystemUiOverlay.bottom],
+    );
+
+// Launch WebView...
+
     final result = await FlutterWebAuth2.authenticate(
       url: _regUrl(domain, authorizationParams),
       callbackUrlScheme: 'ente',
-      options: const FlutterWebAuth2Options(
-        preferEphemeral: true,
-      ),
+      options: const FlutterWebAuth2Options(useWebview: true, preferEphemeral: true),
+    );
+    // After WebView closes, restore edge-to-edge mode if desired
+    await SystemChrome.setEnabledSystemUIMode(
+      SystemUiMode.edgeToEdge,
     );
     final Map<String, dynamic> queryParams = Uri.parse(result).queryParameters;
     final identity = queryParams['identity'];
@@ -154,7 +158,8 @@ class AuthenticationNotifier {
       publicKey: publicKey,
       salt: salt,
     );
-
+    log('Client Auth Token: $clientAuthToken');
+    log('Shared Secret: $sharedSecret');
     await _storage.write(key: _appIdentity, value: identity);
     await _storage.write(key: _appSharedSecret, value: sharedSecret);
     await _storage.write(key: _appAuthToken, value: clientAuthToken);

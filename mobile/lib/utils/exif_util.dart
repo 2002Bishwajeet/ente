@@ -4,9 +4,10 @@ import "dart:io";
 
 import "package:computer/computer.dart";
 import 'package:exif/exif.dart';
-import "package:ffmpeg_kit_flutter_full_gpl/ffprobe_kit.dart";
-import "package:ffmpeg_kit_flutter_full_gpl/media_information.dart";
-import "package:ffmpeg_kit_flutter_full_gpl/media_information_session.dart";
+import "package:ffmpeg_kit_flutter/ffprobe_kit.dart";
+import "package:ffmpeg_kit_flutter/media_information.dart";
+import "package:ffmpeg_kit_flutter/media_information_session.dart";
+
 import "package:flutter/foundation.dart";
 import 'package:intl/intl.dart';
 import 'package:logging/logging.dart';
@@ -79,7 +80,7 @@ Future<FFProbeProps?> getVideoPropsAsync(File originalFile) async {
 
     final session = await FFprobeKit.getMediaInformationAsync(
       originalFile.path,
-      (MediaInformationSession session) async {
+      (MediaInformationSession session) async { 
         // This callback is called when the session is complete
         final mediaInfo = session.getMediaInformation();
         if (mediaInfo == null) {

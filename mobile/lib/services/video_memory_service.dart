@@ -2,8 +2,8 @@ import "dart:async";
 import "dart:io";
 import "dart:typed_data";
 
-import "package:ffmpeg_kit_flutter_full_gpl/ffmpeg_kit.dart";
-import "package:ffmpeg_kit_flutter_full_gpl/return_code.dart";
+import "package:ffmpeg_kit_flutter/ffmpeg_kit.dart";
+import "package:ffmpeg_kit_flutter/return_code.dart";
 import "package:flutter/cupertino.dart";
 import "package:image/image.dart" as img;
 import "package:logging/logging.dart";
@@ -65,8 +65,7 @@ Future<ImageProcessingResult> _prepareImageFiles(
   final String tempPath = tempDir.path;
 
   for (EnteFile file in files) {
-    if (file.fileType == FileType.livePhoto ||
-        file.fileType == FileType.video) {
+    if (file.fileType == FileType.livePhoto || file.fileType == FileType.video) {
       continue;
     }
 
@@ -82,10 +81,8 @@ Future<ImageProcessingResult> _prepareImageFiles(
       if (_isJpegFile(originalImage.path)) {
         processedPath = originalImage.path;
       } else {
-        processedPath =
-            '$tempPath/${DateTime.now().millisecondsSinceEpoch}.jpg';
-        File(processedPath)
-            .writeAsBytesSync(img.encodeJpg(decodedImage, quality: 95));
+        processedPath = '$tempPath/${DateTime.now().millisecondsSinceEpoch}.jpg';
+        File(processedPath).writeAsBytesSync(img.encodeJpg(decodedImage, quality: 95));
       }
 
       paths.add(processedPath);
@@ -102,8 +99,7 @@ Future<ImageProcessingResult> _prepareImageFiles(
 }
 
 bool _isJpegFile(String path) {
-  return path.toLowerCase().endsWith("jpg") ||
-      path.toLowerCase().endsWith("jpeg");
+  return path.toLowerCase().endsWith("jpg") || path.toLowerCase().endsWith("jpeg");
 }
 
 Future<void> _executeFFmpegProcess({
@@ -142,8 +138,7 @@ Future<void> _executeFFmpegProcess({
       (log) {
         final String logMessage = log.getMessage();
 
-        if (logMessage.contains("Invalid data found") ||
-            logMessage.contains("Error")) {
+        if (logMessage.contains("Invalid data found") || logMessage.contains("Error")) {
           _logger.warning("Error detected in FFmpeg log: $logMessage");
           FFmpegKit.cancel();
 

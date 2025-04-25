@@ -10,9 +10,7 @@ import "package:photos/generated/l10n.dart";
 import "package:photos/l10n/l10n.dart";
 import "package:photos/models/api/user/srp.dart";
 import "package:photos/services/account/homebase_account.dart";
-import 'package:photos/services/account/user_service.dart';
 import "package:photos/theme/ente_theme.dart";
-import "package:photos/ui/account/login_pwd_verification_page.dart";
 import 'package:photos/ui/common/dynamic_fab.dart';
 import 'package:photos/ui/common/web_page.dart';
 import "package:photos/utils/standalone/debouncer.dart";
@@ -53,6 +51,43 @@ class _HomebaseLoginPageState extends State<HomebaseLoginPage> {
     // }
   }
 
+  void onPressedFn() async {
+    final authenticationNotifier = AuthenticationNotifier();
+    await authenticationNotifier.youAuthRegistration(_identity!);
+    // await UserService.instance.setEmail(_identity!);
+    Configuration.instance.resetVolatilePassword();
+    SrpAttributes? attr;
+    const bool isEmailVerificationEnabled = true;
+    try {
+      // attr = await UserService.instance.getSrpAttributes(_identity!);
+      // isEmailVerificationEnabled = attr.isEmailMFAEnabled;
+    } catch (e) {
+      if (e is! SrpSetupNotCompleteError) {
+        _logger.severe('Error getting SRP attributes', e);
+      }
+    }
+    // if (attr != null && !isEmailVerificationEnabled) {
+    //   // ignore: unawaited_futures
+    //   Navigator.of(context).push(
+    //     MaterialPageRoute(
+    //       builder: (BuildContext context) {
+    //         return LoginPasswordVerificationPage(
+    //           srpAttributes: attr,
+    //         );
+    //       },
+    //     ),
+    //   );
+    // } else {
+    //   await UserService.instance.sendOtt(
+    //     context,
+    //     _identity!,
+    //     isCreateAccountScreen: false,
+    //     purpose: "login",
+    //   );
+    // }
+    FocusScope.of(context).unfocus();
+  }
+
   @override
   Widget build(BuildContext context) {
     final isKeypadOpen = MediaQuery.viewInsetsOf(context).bottom > 100;
@@ -83,42 +118,7 @@ class _HomebaseLoginPageState extends State<HomebaseLoginPage> {
         isKeypadOpen: isKeypadOpen,
         isFormValid: _identityIsValid,
         buttonText: S.of(context).logInLabel,
-        onPressedFunction: () async {
-          final authenticationNotifier = AuthenticationNotifier();
-          await authenticationNotifier.youAuthRegistration(_identity!);
-          // await UserService.instance.setEmail(_identity!);
-          Configuration.instance.resetVolatilePassword();
-          SrpAttributes? attr;
-          const bool isEmailVerificationEnabled = true;
-          try {
-            // attr = await UserService.instance.getSrpAttributes(_identity!);
-            // isEmailVerificationEnabled = attr.isEmailMFAEnabled;
-          } catch (e) {
-            if (e is! SrpSetupNotCompleteError) {
-              _logger.severe('Error getting SRP attributes', e);
-            }
-          }
-          if (attr != null && !isEmailVerificationEnabled) {
-            // ignore: unawaited_futures
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (BuildContext context) {
-                  return LoginPasswordVerificationPage(
-                    srpAttributes: attr,
-                  );
-                },
-              ),
-            );
-          } else {
-            await UserService.instance.sendOtt(
-              context,
-              _identity!,
-              isCreateAccountScreen: false,
-              purpose: "login",
-            );
-          }
-          FocusScope.of(context).unfocus();
-        },
+        onPressedFunction: onPressedFn,
       ),
       floatingActionButtonLocation: fabLocation(),
       floatingActionButtonAnimator: NoScalingAnimation(),
