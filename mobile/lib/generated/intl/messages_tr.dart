@@ -20,263 +20,236 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'tr';
 
-  static String m46(title) => "${title} (Ben)";
+  static String m0(title) => "${title} (Ben)";
 
-  static String m47(count) =>
-      "${Intl.plural(count, zero: 'Ortak çalışan ekle', one: 'Ortak çalışan ekle', other: 'Ortak çalışan ekle')}";
-
-  static String m48(count) =>
-      "${Intl.plural(count, one: 'Öğeyi taşı', other: 'Öğeleri taşı')}";
-
-  static String m0(storageAmount, endDate) =>
+  static String m3(storageAmount, endDate) =>
       "${storageAmount} eklentiniz ${endDate} tarihine kadar geçerlidir";
 
-  static String m1(count) =>
-      "${Intl.plural(count, zero: 'Görüntüleyen ekle', one: 'Görüntüleyen ekle', other: 'Görüntüleyen ekle')}";
+  static String m5(emailOrName) => "${emailOrName} tarafından eklendi";
 
-  static String m49(emailOrName) => "${emailOrName} tarafından eklendi";
+  static String m6(albumName) => "${albumName} albümüne başarıyla eklendi";
 
-  static String m50(albumName) => "${albumName} albümüne başarıyla eklendi";
-
-  static String m2(count) =>
+  static String m8(count) =>
       "${Intl.plural(count, zero: 'Katılımcı Yok', one: '1 Katılımcı', other: '${count} Katılımcı')}";
 
-  static String m52(versionValue) => "Sürüm: ${versionValue}";
+  static String m9(versionValue) => "Sürüm: ${versionValue}";
 
-  static String m53(freeAmount, storageUnit) =>
+  static String m10(freeAmount, storageUnit) =>
       "${freeAmount} ${storageUnit} ücretsiz";
 
-  static String m3(paymentProvider) =>
+  static String m12(paymentProvider) =>
       "Lütfen önce mevcut aboneliğinizi ${paymentProvider} adresinden iptal edin";
 
-  static String m4(user) =>
+  static String m13(user) =>
       "${user}, bu albüme daha fazla fotoğraf ekleyemeyecek.\n\nAncak, kendi eklediği mevcut fotoğrafları kaldırmaya devam edebilecektir";
 
-  static String m5(isFamilyMember, storageAmountInGb) =>
+  static String m14(isFamilyMember, storageAmountInGb) =>
       "${Intl.select(isFamilyMember, {
             'true': 'Şu ana kadar aileniz ${storageAmountInGb} GB aldı',
             'false': 'Şu ana kadar ${storageAmountInGb} GB aldınız',
             'other': 'Şu ana kadar ${storageAmountInGb} GB aldınız!',
           })}";
 
-  static String m55(albumName) =>
+  static String m15(albumName) =>
       "${albumName} için ortak çalışma bağlantısı oluşturuldu";
 
-  static String m56(count) =>
+  static String m16(count) =>
       "${Intl.plural(count, zero: '0 işbirlikçi eklendi', one: '1 işbirlikçi eklendi', other: '${count} işbirlikçi eklendi')}";
 
-  static String m57(email, numOfDays) =>
+  static String m17(email, numOfDays) =>
       "Güvenilir bir kişi olarak ${email} eklemek üzeresiniz. Eğer ${numOfDays} gün boyunca yoksanız hesabınızı kurtarabilecekler.";
 
-  static String m6(familyAdminEmail) =>
+  static String m18(familyAdminEmail) =>
       "Aboneliğinizi yönetmek için lütfen <green>${familyAdminEmail}</green> ile iletişime geçin";
 
-  static String m7(provider) =>
+  static String m19(provider) =>
       "Lütfen ${provider} aboneliğinizi yönetmek için support@ente.io adresinden bizimle iletişime geçin.";
 
-  static String m58(endpoint) => "${endpoint}\'e bağlanıldı";
+  static String m20(endpoint) => "${endpoint}\'e bağlanıldı";
 
-  static String m8(count) =>
+  static String m21(count) =>
       "${Intl.plural(count, one: 'Delete ${count} item', other: 'Delete ${count} items')}";
 
-  static String m59(currentlyDeleting, totalCount) =>
+  static String m22(currentlyDeleting, totalCount) =>
       "Siliniyor ${currentlyDeleting} / ${totalCount}";
 
-  static String m9(albumName) =>
+  static String m23(albumName) =>
       "Bu, \"${albumName}\"e erişim için olan genel bağlantıyı kaldıracaktır.";
 
-  static String m10(supportEmail) =>
+  static String m24(supportEmail) =>
       "Lütfen kayıtlı e-posta adresinizden ${supportEmail} adresine bir e-posta gönderin";
 
-  static String m11(count, storageSaved) =>
+  static String m25(count, storageSaved) =>
       "You have cleaned up ${Intl.plural(count, one: '${count} duplicate file', other: '${count} duplicate files')}, saving (${storageSaved}!)";
 
-  static String m12(count, formattedSize) =>
+  static String m26(count, formattedSize) =>
       "${count} dosyalar, ${formattedSize} her biri";
 
-  static String m60(newEmail) => "E-posta ${newEmail} olarak değiştirildi";
+  static String m27(newEmail) => "E-posta ${newEmail} olarak değiştirildi";
 
-  static String m61(email) => "${email} bir Ente hesabına sahip değil";
+  static String m28(email) => "${email} bir Ente hesabına sahip değil";
 
-  static String m13(email) =>
+  static String m29(email) =>
       "${email}, Ente hesabı bulunmamaktadır.\n\nOnlarla fotoğraf paylaşımı için bir davet gönder.";
 
-  static String m63(text) => "${text} için ekstra fotoğraflar bulundu";
+  static String m31(text) => "${text} için ekstra fotoğraflar bulundu";
 
-  static String m65(count, formattedNumber) =>
+  static String m33(count, formattedNumber) =>
       "Bu cihazdaki ${Intl.plural(count, one: '1 file', other: '${formattedNumber} dosya')} güvenli bir şekilde yedeklendi";
 
-  static String m66(count, formattedNumber) =>
+  static String m34(count, formattedNumber) =>
       "Bu albümdeki ${Intl.plural(count, one: '1 file', other: '${formattedNumber} dosya')} güvenli bir şekilde yedeklendi";
 
-  static String m14(storageAmountInGB) =>
+  static String m35(storageAmountInGB) =>
       "Birisinin davet kodunuzu uygulayıp ücretli hesap açtığı her seferede ${storageAmountInGB} GB";
 
-  static String m15(endDate) => "Ücretsiz deneme ${endDate} sona erir";
+  static String m36(endDate) => "Ücretsiz deneme ${endDate} sona erir";
 
-  static String m67(count) =>
-      "Aktif bir aboneliğiniz olduğu sürece ente\'de ${Intl.plural(count, one: 'it', other: 'them')} erişimine devam edebilirsiniz";
+  static String m38(sizeInMBorGB) => "${sizeInMBorGB} yer açın";
 
-  static String m68(sizeInMBorGB) => "${sizeInMBorGB} yer açın";
-
-  static String m69(count, formattedSize) =>
-      "${Intl.plural(count, one: 'Yer açmak için cihazdan silinebilir ${formattedSize}', other: 'Yer açmak için cihazdan silinebilir ${formattedSize}')}";
-
-  static String m70(currentlyProcessing, totalCount) =>
+  static String m40(currentlyProcessing, totalCount) =>
       "Siliniyor ${currentlyProcessing} / ${totalCount}";
 
-  static String m16(count) =>
+  static String m42(count) =>
       "${Intl.plural(count, one: '${count} öğe', other: '${count} öğeler')}";
 
-  static String m73(email) =>
+  static String m44(email) =>
       "${email} sizi güvenilir bir kişi olmaya davet etti";
 
-  static String m17(expiryTime) =>
+  static String m45(expiryTime) =>
       "Bu bağlantı ${expiryTime} dan sonra geçersiz olacaktır";
 
-  static String m74(email) => "Kişiyi ${email} adresine bağlayın";
+  static String m46(email) => "Kişiyi ${email} adresine bağlayın";
 
-  static String m75(personName, email) =>
+  static String m47(personName, email) =>
       "Bu, ${personName} ile ${email} arasında bağlantı kuracaktır.";
 
-  static String m18(count, formattedCount) =>
-      "${Intl.plural(count, zero: 'anı yok', one: '${formattedCount} anı', other: '${formattedCount} anılar')}";
+  static String m50(albumName) => "${albumName} adlı albüme başarıyla taşındı";
 
-  static String m76(count) =>
-      "${Intl.plural(count, one: 'Öğeyi taşı', other: 'Öğeleri taşı')}";
+  static String m51(personName) => "${personName} için öneri yok";
 
-  static String m77(albumName) => "${albumName} adlı albüme başarıyla taşındı";
+  static String m52(name) => "${name} değil mi?";
 
-  static String m78(personName) => "${personName} için öneri yok";
-
-  static String m79(name) => "${name} değil mi?";
-
-  static String m19(familyAdminEmail) =>
+  static String m53(familyAdminEmail) =>
       "Kodunuzu değiştirmek için lütfen ${familyAdminEmail} ile iletişime geçin.";
 
-  static String m20(passwordStrengthValue) =>
+  static String m55(passwordStrengthValue) =>
       "Şifrenin güçlülük seviyesi: ${passwordStrengthValue}";
 
-  static String m21(providerName) =>
+  static String m56(providerName) =>
       "Sizden ücret alındıysa lütfen ${providerName} destek ekibiyle görüşün";
 
-  static String m83(count) =>
+  static String m59(count) =>
       "${Intl.plural(count, zero: 'Fotoğraf yok', one: '1 fotoğraf', other: '${count} fotoğraf')}";
 
-  static String m84(count) =>
-      "${Intl.plural(count, zero: '0 fotoğraf', one: '1 fotoğraf', other: '${count} fotoğraflar')}";
-
-  static String m22(endDate) =>
+  static String m61(endDate) =>
       "Ücretsiz deneme süresi ${endDate} tarihine kadar geçerlidir.\nDaha sonra ücretli bir plan seçebilirsiniz.";
 
-  static String m85(toEmail) => "Lütfen bize ${toEmail} adresinden ulaşın";
+  static String m62(toEmail) => "Lütfen bize ${toEmail} adresinden ulaşın";
 
-  static String m86(toEmail) =>
+  static String m63(toEmail) =>
       "Lütfen günlükleri şu adrese gönderin\n${toEmail}";
 
-  static String m88(folderName) => "İşleniyor ${folderName}...";
+  static String m65(folderName) => "İşleniyor ${folderName}...";
 
-  static String m23(storeName) => "Bizi ${storeName} üzerinden değerlendirin";
+  static String m66(storeName) => "Bizi ${storeName} üzerinden değerlendirin";
 
-  static String m89(name) => "Sizi ${name}\'e yeniden atadım";
+  static String m67(name) => "Sizi ${name}\'e yeniden atadım";
 
-  static String m90(days, email) =>
+  static String m68(days, email) =>
       "Hesabınıza ${days} gün sonra erişebilirsiniz. ${email} adresine bir bildirim gönderilecektir.";
 
-  static String m91(email) =>
+  static String m69(email) =>
       "Artık yeni bir parola belirleyerek ${email} hesabını kurtarabilirsiniz.";
 
-  static String m92(email) => "${email} hesabınızı kurtarmaya çalışıyor.";
+  static String m70(email) => "${email} hesabınızı kurtarmaya çalışıyor.";
 
-  static String m24(storageInGB) => "3. Hepimiz ${storageInGB} GB* bedava alın";
+  static String m71(storageInGB) => "3. Hepimiz ${storageInGB} GB* bedava alın";
 
-  static String m25(userEmail) =>
+  static String m72(userEmail) =>
       "${userEmail} bu paylaşılan albümden kaldırılacaktır\n\nOnlar tarafından eklenen tüm fotoğraflar da albümden kaldırılacaktır";
 
-  static String m26(endDate) => "Abonelik ${endDate} tarihinde yenilenir";
+  static String m73(endDate) => "Abonelik ${endDate} tarihinde yenilenir";
 
-  static String m94(count) =>
+  static String m113(count) =>
       "${Intl.plural(count, one: '${count} yıl önce', other: '${count} yıl önce')}";
 
-  static String m95(snapshotLength, searchLength) =>
+  static String m75(snapshotLength, searchLength) =>
       "Bölüm uzunluğu uyuşmazlığı: ${snapshotLength} != ${searchLength}";
 
-  static String m27(count) => "${count} seçildi";
+  static String m76(count) => "${count} seçildi";
 
-  static String m28(count, yourCount) =>
+  static String m77(count, yourCount) =>
       "Seçilenler: ${count} (${yourCount} sizin seçiminiz)";
 
-  static String m29(verificationID) =>
+  static String m79(verificationID) =>
       "İşte ente.io için doğrulama kimliğim: ${verificationID}.";
 
-  static String m30(verificationID) =>
+  static String m80(verificationID) =>
       "Merhaba, bu ente.io doğrulama kimliğinizin doğruluğunu onaylayabilir misiniz: ${verificationID}";
 
-  static String m31(referralCode, referralStorageInGB) =>
+  static String m81(referralCode, referralStorageInGB) =>
       "Ente davet kodu: ${referralCode} \n\nÜcretli hesaba başvurduktan sonra ${referralStorageInGB} GB bedava almak için \nAyarlar → Genel → Davetlerde bu kodu girin\n\nhttps://ente.io";
 
-  static String m32(numberOfPeople) =>
+  static String m82(numberOfPeople) =>
       "${Intl.plural(numberOfPeople, zero: 'Belirli kişilerle paylaş', one: '1 kişiyle paylaşıldı', other: '${numberOfPeople} kişiyle paylaşıldı')}";
 
-  static String m97(emailIDs) => "${emailIDs} ile paylaşıldı";
+  static String m83(emailIDs) => "${emailIDs} ile paylaşıldı";
 
-  static String m33(fileType) => "Bu ${fileType}, cihazınızdan silinecek.";
+  static String m84(fileType) => "Bu ${fileType}, cihazınızdan silinecek.";
 
-  static String m34(fileType) =>
+  static String m85(fileType) =>
       "${fileType} Ente ve cihazınızdan silinecektir.";
 
-  static String m35(fileType) => "${fileType} Ente\'den silinecektir.";
+  static String m86(fileType) => "${fileType} Ente\'den silinecektir.";
 
-  static String m36(storageAmountInGB) => "${storageAmountInGB} GB";
+  static String m89(storageAmountInGB) => "${storageAmountInGB} GB";
 
-  static String m100(
+  static String m90(
           usedAmount, usedStorageUnit, totalAmount, totalStorageUnit) =>
       "${usedAmount} ${usedStorageUnit} / ${totalAmount} ${totalStorageUnit} kullanıldı";
 
-  static String m37(id) =>
+  static String m91(id) =>
       "${id}\'niz zaten başka bir ente hesabına bağlı.\n${id} numaranızı bu hesapla kullanmak istiyorsanız lütfen desteğimizle iletişime geçin\'\'";
 
-  static String m38(endDate) =>
+  static String m92(endDate) =>
       "Aboneliğiniz ${endDate} tarihinde iptal edilecektir";
 
-  static String m101(completed, total) => "${completed}/${total} anı korundu";
+  static String m93(completed, total) => "${completed}/${total} anı korundu";
 
-  static String m102(ignoreReason) =>
+  static String m94(ignoreReason) =>
       "Yüklemek için dokunun, yükleme şu anda ${ignoreReason} nedeniyle yok sayılıyor";
 
-  static String m39(storageAmountInGB) =>
+  static String m95(storageAmountInGB) =>
       "Aynı zamanda ${storageAmountInGB} GB alıyorlar";
 
-  static String m40(email) => "Bu, ${email}\'in Doğrulama Kimliği";
+  static String m96(email) => "Bu, ${email}\'in Doğrulama Kimliği";
 
-  static String m105(count) =>
+  static String m99(count) =>
       "${Intl.plural(count, zero: 'yakında', one: '1 gün', other: '${count} gün')}";
 
-  static String m108(email) =>
+  static String m102(email) =>
       "${email} ile eski bir irtibat kişisi olmaya davet edildiniz.";
 
-  static String m109(galleryType) =>
+  static String m103(galleryType) =>
       "Galeri türü ${galleryType} yeniden adlandırma için desteklenmiyor";
 
-  static String m110(ignoreReason) =>
+  static String m104(ignoreReason) =>
       "Yükleme ${ignoreReason} nedeniyle yok sayıldı";
 
-  static String m111(count) => "${count} anı korunuyor...";
+  static String m105(count) => "${count} anı korunuyor...";
 
-  static String m41(endDate) => "${endDate} tarihine kadar geçerli";
+  static String m106(endDate) => "${endDate} tarihine kadar geçerli";
 
-  static String m42(email) => "${email} doğrula";
+  static String m107(email) => "${email} doğrula";
 
-  static String m112(count) =>
-      "${Intl.plural(count, zero: '0 Görüntüleyen eklendi', one: '1 Görüntüleyen eklendi', other: '${count} Görüntüleyen eklendi')}";
-
-  static String m43(email) =>
+  static String m109(email) =>
       "E-postayı <green>${email}</green> adresine gönderdik";
 
-  static String m44(count) =>
+  static String m110(count) =>
       "${Intl.plural(count, one: '${count} yıl önce', other: '${count} yıl önce')}";
 
-  static String m45(storageSaved) =>
+  static String m112(storageSaved) =>
       "Başarılı bir şekilde ${storageSaved} alanını boşalttınız!";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -289,7 +262,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "account": MessageLookupByLibrary.simpleMessage("Hesap"),
         "accountIsAlreadyConfigured": MessageLookupByLibrary.simpleMessage(
             "Hesap zaten yapılandırılmıştır."),
-        "accountOwnerPersonAppbarTitle": m46,
+        "accountOwnerPersonAppbarTitle": m0,
         "accountWelcomeBack":
             MessageLookupByLibrary.simpleMessage("Tekrar hoş geldiniz!"),
         "ackPasswordLostWarning": MessageLookupByLibrary.simpleMessage(
@@ -302,10 +275,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Yeni e-posta ekle"),
         "addCollaborator":
             MessageLookupByLibrary.simpleMessage("Düzenleyici ekle"),
-        "addCollaborators": m47,
         "addFiles": MessageLookupByLibrary.simpleMessage("Dosyaları Ekle"),
         "addFromDevice": MessageLookupByLibrary.simpleMessage("Cihazdan ekle"),
-        "addItem": m48,
         "addLocation": MessageLookupByLibrary.simpleMessage("Konum Ekle"),
         "addLocationButton": MessageLookupByLibrary.simpleMessage("Ekle"),
         "addMore": MessageLookupByLibrary.simpleMessage("Daha fazla ekle"),
@@ -316,7 +287,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "addNewPerson": MessageLookupByLibrary.simpleMessage("Yeni kişi ekle"),
         "addOnPageSubtitle":
             MessageLookupByLibrary.simpleMessage("Eklentilerin ayrıntıları"),
-        "addOnValidTill": m0,
+        "addOnValidTill": m3,
         "addOns": MessageLookupByLibrary.simpleMessage("Eklentiler"),
         "addPhotos": MessageLookupByLibrary.simpleMessage("Fotoğraf ekle"),
         "addSelected": MessageLookupByLibrary.simpleMessage("Seçileni ekle"),
@@ -327,12 +298,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "addTrustedContact":
             MessageLookupByLibrary.simpleMessage("Güvenilir kişi ekle"),
         "addViewer": MessageLookupByLibrary.simpleMessage("Görüntüleyici ekle"),
-        "addViewers": m1,
         "addYourPhotosNow": MessageLookupByLibrary.simpleMessage(
             "Fotoğraflarınızı şimdi ekleyin"),
         "addedAs": MessageLookupByLibrary.simpleMessage("Eklendi"),
-        "addedBy": m49,
-        "addedSuccessfullyTo": m50,
+        "addedBy": m5,
+        "addedSuccessfullyTo": m6,
         "addingToFavorites":
             MessageLookupByLibrary.simpleMessage("Favorilere ekleniyor..."),
         "advanced": MessageLookupByLibrary.simpleMessage("Gelişmiş"),
@@ -343,7 +313,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "after1Week": MessageLookupByLibrary.simpleMessage("1 hafta sonra"),
         "after1Year": MessageLookupByLibrary.simpleMessage("1 yıl sonra"),
         "albumOwner": MessageLookupByLibrary.simpleMessage("Sahip"),
-        "albumParticipantsCount": m2,
+        "albumParticipantsCount": m8,
         "albumTitle": MessageLookupByLibrary.simpleMessage("Albüm Başlığı"),
         "albumUpdated":
             MessageLookupByLibrary.simpleMessage("Albüm güncellendi"),
@@ -395,7 +365,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "appLock": MessageLookupByLibrary.simpleMessage("Uygulama kilidi"),
         "appLockDescriptions": MessageLookupByLibrary.simpleMessage(
             "Cihazınızın varsayılan kilit ekranı ile PIN veya parola içeren özel bir kilit ekranı arasında seçim yapın."),
-        "appVersion": m52,
+        "appVersion": m9,
         "appleId": MessageLookupByLibrary.simpleMessage("Apple kimliği"),
         "apply": MessageLookupByLibrary.simpleMessage("Uygula"),
         "applyCodeTitle": MessageLookupByLibrary.simpleMessage("Kodu girin"),
@@ -477,7 +447,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "autoPairDesc": MessageLookupByLibrary.simpleMessage(
             "Otomatik eşleştirme yalnızca Chromecast destekleyen cihazlarla çalışır."),
         "available": MessageLookupByLibrary.simpleMessage("Mevcut"),
-        "availableStorageSpace": m53,
+        "availableStorageSpace": m10,
         "backedUpFolders":
             MessageLookupByLibrary.simpleMessage("Yedeklenmiş klasörler"),
         "backup": MessageLookupByLibrary.simpleMessage("Yedekle"),
@@ -498,6 +468,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "blackFridaySale":
             MessageLookupByLibrary.simpleMessage("Muhteşem Cuma kampanyası"),
         "blog": MessageLookupByLibrary.simpleMessage("Blog"),
+        "cLFamilyPlan":
+            MessageLookupByLibrary.simpleMessage("Aile Planı Sınırları"),
+        "cLFamilyPlanDesc": MessageLookupByLibrary.simpleMessage(
+            "Artık aile üyelerinizin ne kadar depolama alanı kullanabileceğine dair sınırlar belirleyebilirsiniz."),
+        "cLIcon": MessageLookupByLibrary.simpleMessage("Yeni Simge"),
+        "cLMemories": MessageLookupByLibrary.simpleMessage("Anılar"),
         "cachedData":
             MessageLookupByLibrary.simpleMessage("Ön belleğe alınan veri"),
         "calculating": MessageLookupByLibrary.simpleMessage("Hesaplanıyor..."),
@@ -518,10 +494,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Kurtarma işlemini iptal et"),
         "cancelAccountRecoveryBody": MessageLookupByLibrary.simpleMessage(
             "Kurtarmayı iptal etmek istediğinize emin misiniz?"),
-        "cancelOtherSubscription": m3,
+        "cancelOtherSubscription": m12,
         "cancelSubscription":
             MessageLookupByLibrary.simpleMessage("Abonelik iptali"),
-        "cannotAddMorePhotosAfterBecomingViewer": m4,
+        "cannotAddMorePhotosAfterBecomingViewer": m13,
         "cannotDeleteSharedFiles":
             MessageLookupByLibrary.simpleMessage("Dosyalar silinemiyor"),
         "castAlbum": MessageLookupByLibrary.simpleMessage("Yayın albümü"),
@@ -558,7 +534,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Bedava alan talep edin"),
         "claimMore": MessageLookupByLibrary.simpleMessage("Arttır!"),
         "claimed": MessageLookupByLibrary.simpleMessage("Alındı"),
-        "claimedStorageSoFar": m5,
+        "claimedStorageSoFar": m14,
         "cleanUncategorized":
             MessageLookupByLibrary.simpleMessage("Temiz Genel"),
         "cleanUncategorizedDescription": MessageLookupByLibrary.simpleMessage(
@@ -588,12 +564,12 @@ class MessageLookup extends MessageLookupByLibrary {
             "Ente aplikasyonu veya hesabı olmadan insanların paylaşılan albümde fotoğraf ekleyip görüntülemelerine izin vermek için bir bağlantı oluşturun. Grup veya etkinlik fotoğraflarını toplamak için harika bir seçenek."),
         "collaborativeLink":
             MessageLookupByLibrary.simpleMessage("Organizasyon bağlantısı"),
-        "collaborativeLinkCreatedFor": m55,
+        "collaborativeLinkCreatedFor": m15,
         "collaborator": MessageLookupByLibrary.simpleMessage("Düzenleyici"),
         "collaboratorsCanAddPhotosAndVideosToTheSharedAlbum":
             MessageLookupByLibrary.simpleMessage(
                 "Düzenleyiciler, paylaşılan albüme fotoğraf ve videolar ekleyebilir."),
-        "collaboratorsSuccessfullyAdded": m56,
+        "collaboratorsSuccessfullyAdded": m16,
         "collageLayout": MessageLookupByLibrary.simpleMessage("Düzen"),
         "collageSaved": MessageLookupByLibrary.simpleMessage(
             "Kolajınız galeriye kaydedildi"),
@@ -611,7 +587,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "İki adımlı kimlik doğrulamasını devre dışı bırakmak istediğinize emin misiniz?"),
         "confirmAccountDeletion":
             MessageLookupByLibrary.simpleMessage("Hesap silme işlemini onayla"),
-        "confirmAddingTrustedContact": m57,
+        "confirmAddingTrustedContact": m17,
         "confirmDeletePrompt": MessageLookupByLibrary.simpleMessage(
             "Evet, bu hesabı ve verilerini tüm uygulamalardan kalıcı olarak silmek istiyorum."),
         "confirmPassword":
@@ -624,10 +600,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Kurtarma anahtarını doğrulayın"),
         "connectToDevice":
             MessageLookupByLibrary.simpleMessage("Cihaza bağlanın"),
-        "contactFamilyAdmin": m6,
+        "contactFamilyAdmin": m18,
         "contactSupport":
             MessageLookupByLibrary.simpleMessage("Destek ile iletişim"),
-        "contactToManageSubscription": m7,
+        "contactToManageSubscription": m19,
         "contacts": MessageLookupByLibrary.simpleMessage("Kişiler"),
         "contents": MessageLookupByLibrary.simpleMessage("İçerikler"),
         "continueLabel": MessageLookupByLibrary.simpleMessage("Devam edin"),
@@ -673,7 +649,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "currentlyRunning":
             MessageLookupByLibrary.simpleMessage("şu anda çalışıyor"),
         "custom": MessageLookupByLibrary.simpleMessage("Kişisel"),
-        "customEndpoint": m58,
+        "customEndpoint": m20,
         "darkTheme": MessageLookupByLibrary.simpleMessage("Karanlık"),
         "dayToday": MessageLookupByLibrary.simpleMessage("Bugün"),
         "dayYesterday": MessageLookupByLibrary.simpleMessage("Dün"),
@@ -710,11 +686,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "deleteFromDevice":
             MessageLookupByLibrary.simpleMessage("Cihazınızdan silin"),
         "deleteFromEnte": MessageLookupByLibrary.simpleMessage("Ente\'den Sil"),
-        "deleteItemCount": m8,
+        "deleteItemCount": m21,
         "deleteLocation": MessageLookupByLibrary.simpleMessage("Konumu sil"),
         "deletePhotos":
             MessageLookupByLibrary.simpleMessage("Fotoğrafları sil"),
-        "deleteProgress": m59,
+        "deleteProgress": m22,
         "deleteReason1": MessageLookupByLibrary.simpleMessage(
             "İhtiyacım olan önemli bir özellik eksik"),
         "deleteReason2": MessageLookupByLibrary.simpleMessage(
@@ -753,7 +729,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Görüntüleyiciler, hala harici araçlar kullanarak ekran görüntüsü alabilir veya fotoğraflarınızın bir kopyasını kaydedebilir. Lütfen bunu göz önünde bulundurunuz"),
         "disableDownloadWarningTitle":
             MessageLookupByLibrary.simpleMessage("Lütfen dikkate alın"),
-        "disableLinkMessage": m9,
+        "disableLinkMessage": m23,
         "disableTwofactor": MessageLookupByLibrary.simpleMessage(
             "İki Aşamalı Doğrulamayı Devre Dışı Bırak"),
         "disablingTwofactorAuthentication":
@@ -796,9 +772,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "downloadFailed":
             MessageLookupByLibrary.simpleMessage("İndirme başarısız"),
         "downloading": MessageLookupByLibrary.simpleMessage("İndiriliyor..."),
-        "dropSupportEmail": m10,
-        "duplicateFileCountWithStorageSaved": m11,
-        "duplicateItemsGroup": m12,
+        "dropSupportEmail": m24,
+        "duplicateFileCountWithStorageSaved": m25,
+        "duplicateItemsGroup": m26,
         "edit": MessageLookupByLibrary.simpleMessage("Düzenle"),
         "editLocation": MessageLookupByLibrary.simpleMessage("Konumu düzenle"),
         "editLocationTagTitle":
@@ -814,9 +790,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("E-Posta"),
         "emailAlreadyRegistered": MessageLookupByLibrary.simpleMessage(
             "Bu e-posta adresi zaten kayıtlı."),
-        "emailChangedTo": m60,
-        "emailDoesNotHaveEnteAccount": m61,
-        "emailNoEnteAccount": m13,
+        "emailChangedTo": m27,
+        "emailDoesNotHaveEnteAccount": m28,
+        "emailNoEnteAccount": m29,
         "emailNotRegistered": MessageLookupByLibrary.simpleMessage(
             "Bu e-posta adresi sistemde kayıtlı değil."),
         "emailVerificationToggle":
@@ -903,7 +879,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Veriyi dışarı aktar"),
         "extraPhotosFound":
             MessageLookupByLibrary.simpleMessage("Ekstra fotoğraflar bulundu"),
-        "extraPhotosFoundFor": m63,
+        "extraPhotosFoundFor": m31,
         "faceNotClusteredYet": MessageLookupByLibrary.simpleMessage(
             "Yüz henüz kümelenmedi, lütfen daha sonra tekrar gelin"),
         "faceRecognition": MessageLookupByLibrary.simpleMessage("Yüz Tanıma"),
@@ -951,8 +927,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "fileTypes": MessageLookupByLibrary.simpleMessage("Dosya türü"),
         "fileTypesAndNames":
             MessageLookupByLibrary.simpleMessage("Dosya türleri ve adları"),
-        "filesBackedUpFromDevice": m65,
-        "filesBackedUpInAlbum": m66,
+        "filesBackedUpFromDevice": m33,
+        "filesBackedUpInAlbum": m34,
         "filesDeleted":
             MessageLookupByLibrary.simpleMessage("Dosyalar silinmiş"),
         "filesSavedToGallery": MessageLookupByLibrary.simpleMessage(
@@ -969,26 +945,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "foundFaces": MessageLookupByLibrary.simpleMessage("Yüzler bulundu"),
         "freeStorageClaimed":
             MessageLookupByLibrary.simpleMessage("Alınan bedava alan"),
-        "freeStorageOnReferralSuccess": m14,
+        "freeStorageOnReferralSuccess": m35,
         "freeStorageUsable":
             MessageLookupByLibrary.simpleMessage("Kullanılabilir bedava alan"),
         "freeTrial": MessageLookupByLibrary.simpleMessage("Ücretsiz deneme"),
-        "freeTrialValidTill": m15,
-        "freeUpAccessPostDelete": m67,
-        "freeUpAmount": m68,
+        "freeTrialValidTill": m36,
+        "freeUpAmount": m38,
         "freeUpDeviceSpace":
             MessageLookupByLibrary.simpleMessage("Cihaz alanını boşaltın"),
         "freeUpDeviceSpaceDesc": MessageLookupByLibrary.simpleMessage(
             "Zaten yedeklenmiş dosyaları temizleyerek cihazınızda yer kazanın."),
         "freeUpSpace": MessageLookupByLibrary.simpleMessage("Boş alan"),
-        "freeUpSpaceSaving": m69,
         "gallery": MessageLookupByLibrary.simpleMessage("Galeri"),
         "galleryMemoryLimitInfo": MessageLookupByLibrary.simpleMessage(
             "Galeride 1000\'e kadar anı gösterilir"),
         "general": MessageLookupByLibrary.simpleMessage("Genel"),
         "generatingEncryptionKeys": MessageLookupByLibrary.simpleMessage(
             "Şifreleme anahtarı oluşturuluyor..."),
-        "genericProgress": m70,
+        "genericProgress": m40,
         "goToSettings": MessageLookupByLibrary.simpleMessage("Ayarlara git"),
         "googlePlayId":
             MessageLookupByLibrary.simpleMessage("Google play kimliği"),
@@ -1073,7 +1047,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "itLooksLikeSomethingWentWrongPleaseRetryAfterSome":
             MessageLookupByLibrary.simpleMessage(
                 "Bir şeyler ters gitmiş gibi görünüyor. Lütfen bir süre sonra tekrar deneyin. Hata devam ederse, lütfen destek ekibimizle iletişime geçin."),
-        "itemCount": m16,
+        "itemCount": m42,
         "itemsShowTheNumberOfDaysRemainingBeforePermanentDeletion":
             MessageLookupByLibrary.simpleMessage(
                 "Öğeler, kalıcı olarak silinmeden önce kalan gün sayısını gösterir"),
@@ -1107,7 +1081,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "legacy": MessageLookupByLibrary.simpleMessage("Geleneksel"),
         "legacyAccounts":
             MessageLookupByLibrary.simpleMessage("Geleneksel hesaplar"),
-        "legacyInvite": m73,
+        "legacyInvite": m44,
         "legacyPageDesc": MessageLookupByLibrary.simpleMessage(
             "Geleneksel yol, güvendiğiniz kişilerin yokluğunuzda hesabınıza erişmesine olanak tanır."),
         "legacyPageDesc2": MessageLookupByLibrary.simpleMessage(
@@ -1123,7 +1097,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("d"),
         "linkEnabled": MessageLookupByLibrary.simpleMessage("Geçerli"),
         "linkExpired": MessageLookupByLibrary.simpleMessage("Süresi dolmuş"),
-        "linkExpiresOn": m17,
+        "linkExpiresOn": m45,
         "linkExpiry":
             MessageLookupByLibrary.simpleMessage("Linkin geçerliliği"),
         "linkHasExpired":
@@ -1132,8 +1106,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "linkPerson": MessageLookupByLibrary.simpleMessage("Bağlantı kişisi"),
         "linkPersonCaption": MessageLookupByLibrary.simpleMessage(
             "daha iyi paylaşım deneyimi için"),
-        "linkPersonToEmail": m74,
-        "linkPersonToEmailConfirmation": m75,
+        "linkPersonToEmail": m46,
+        "linkPersonToEmailConfirmation": m47,
         "livePhotos": MessageLookupByLibrary.simpleMessage("Canlı Fotoğraf"),
         "loadMessage1": MessageLookupByLibrary.simpleMessage(
             "Aboneliğinizi ailenizle paylaşabilirsiniz"),
@@ -1223,7 +1197,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "mastodon": MessageLookupByLibrary.simpleMessage("Mastodon"),
         "matrix": MessageLookupByLibrary.simpleMessage("Matrix"),
         "me": MessageLookupByLibrary.simpleMessage("Ben"),
-        "memoryCount": m18,
         "merchandise": MessageLookupByLibrary.simpleMessage("Ürünler"),
         "mergeWithExisting":
             MessageLookupByLibrary.simpleMessage("Var olan ile birleştir."),
@@ -1253,13 +1226,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "moreDetails": MessageLookupByLibrary.simpleMessage("Daha fazla detay"),
         "mostRecent": MessageLookupByLibrary.simpleMessage("En son"),
         "mostRelevant": MessageLookupByLibrary.simpleMessage("En alakalı"),
-        "moveItem": m76,
         "moveSelectedPhotosToOneDate": MessageLookupByLibrary.simpleMessage(
             "Seçilen fotoğrafları bir tarihe taşıma"),
         "moveToAlbum": MessageLookupByLibrary.simpleMessage("Albüme taşı"),
         "moveToHiddenAlbum":
             MessageLookupByLibrary.simpleMessage("Gizli albüme ekle"),
-        "movedSuccessfullyTo": m77,
+        "movedSuccessfullyTo": m50,
         "movedToTrash":
             MessageLookupByLibrary.simpleMessage("Cöp kutusuna taşı"),
         "movingFilesToAlbum": MessageLookupByLibrary.simpleMessage(
@@ -1312,10 +1284,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "noResults": MessageLookupByLibrary.simpleMessage("Sonuç bulunamadı"),
         "noResultsFound":
             MessageLookupByLibrary.simpleMessage("Hiçbir sonuç bulunamadı"),
-        "noSuggestionsForPerson": m78,
+        "noSuggestionsForPerson": m51,
         "noSystemLockFound":
             MessageLookupByLibrary.simpleMessage("Sistem kilidi bulunamadı"),
-        "notPersonLabel": m79,
+        "notPersonLabel": m52,
         "nothingSharedWithYouYet": MessageLookupByLibrary.simpleMessage(
             "Henüz sizinle paylaşılan bir şey yok"),
         "nothingToSeeHere": MessageLookupByLibrary.simpleMessage(
@@ -1325,7 +1297,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "onDevice": MessageLookupByLibrary.simpleMessage("Bu cihaz"),
         "onEnte": MessageLookupByLibrary.simpleMessage(
             "<branding>ente</branding> üzerinde"),
-        "onlyFamilyAdminCanChangeCode": m19,
+        "onlyFamilyAdminCanChangeCode": m53,
         "onlyThem": MessageLookupByLibrary.simpleMessage("Sadece onlar"),
         "oops": MessageLookupByLibrary.simpleMessage("Hay aksi"),
         "oopsCouldNotSaveEdits": MessageLookupByLibrary.simpleMessage(
@@ -1364,7 +1336,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "passwordChangedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Şifreniz başarılı bir şekilde değiştirildi"),
         "passwordLock": MessageLookupByLibrary.simpleMessage("Sifre kilidi"),
-        "passwordStrength": m20,
+        "passwordStrength": m55,
         "passwordStrengthInfo": MessageLookupByLibrary.simpleMessage(
             "Parola gücü, parolanın uzunluğu, kullanılan karakterler ve parolanın en çok kullanılan ilk 10.000 parola arasında yer alıp almadığı dikkate alınarak hesaplanır"),
         "passwordWarning": MessageLookupByLibrary.simpleMessage(
@@ -1375,7 +1347,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ödeme başarısız oldu"),
         "paymentFailedMessage": MessageLookupByLibrary.simpleMessage(
             "Maalesef ödemeniz başarısız oldu. Lütfen destekle iletişime geçin, size yardımcı olacağız!"),
-        "paymentFailedTalkToProvider": m21,
+        "paymentFailedTalkToProvider": m56,
         "pendingItems": MessageLookupByLibrary.simpleMessage("Bekleyen Öğeler"),
         "pendingSync":
             MessageLookupByLibrary.simpleMessage("Senkronizasyon bekleniyor"),
@@ -1394,12 +1366,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "photoGridSize":
             MessageLookupByLibrary.simpleMessage("Fotoğraf ızgara boyutu"),
         "photoSmallCase": MessageLookupByLibrary.simpleMessage("fotoğraf"),
-        "photocountPhotos": m83,
+        "photocountPhotos": m59,
         "photos": MessageLookupByLibrary.simpleMessage("Fotoğraflar"),
         "photosAddedByYouWillBeRemovedFromTheAlbum":
             MessageLookupByLibrary.simpleMessage(
                 "Eklediğiniz fotoğraflar albümden kaldırılacak"),
-        "photosCount": m84,
         "photosKeepRelativeTimeDifference":
             MessageLookupByLibrary.simpleMessage(
                 "Fotoğraflar göreli zaman farkını korur"),
@@ -1409,7 +1380,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "pinLock": MessageLookupByLibrary.simpleMessage("Pin kilidi"),
         "playOnTv": MessageLookupByLibrary.simpleMessage("Albümü TV\'de oynat"),
         "playOriginal": MessageLookupByLibrary.simpleMessage("Orijinali oynat"),
-        "playStoreFreeTrialValidTill": m22,
+        "playStoreFreeTrialValidTill": m61,
         "playStream": MessageLookupByLibrary.simpleMessage("Akışı oynat"),
         "playstoreSubscription":
             MessageLookupByLibrary.simpleMessage("PlayStore aboneliği"),
@@ -1422,14 +1393,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "pleaseContactSupportIfTheProblemPersists":
             MessageLookupByLibrary.simpleMessage(
                 "Bu hata devam ederse lütfen desteğe başvurun"),
-        "pleaseEmailUsAt": m85,
+        "pleaseEmailUsAt": m62,
         "pleaseGrantPermissions":
             MessageLookupByLibrary.simpleMessage("Lütfen izin ver"),
         "pleaseLoginAgain":
             MessageLookupByLibrary.simpleMessage("Lütfen tekrar giriş yapın"),
         "pleaseSelectQuickLinksToRemove": MessageLookupByLibrary.simpleMessage(
             "Lütfen kaldırmak için hızlı bağlantıları seçin"),
-        "pleaseSendTheLogsTo": m86,
+        "pleaseSendTheLogsTo": m63,
         "pleaseTryAgain":
             MessageLookupByLibrary.simpleMessage("Lütfen tekrar deneyiniz"),
         "pleaseVerifyTheCodeYouHaveEntered":
@@ -1462,7 +1433,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "proceed": MessageLookupByLibrary.simpleMessage("Devam edin"),
         "processed": MessageLookupByLibrary.simpleMessage("İşlenen"),
         "processing": MessageLookupByLibrary.simpleMessage("İşleniyor"),
-        "processingImport": m88,
+        "processingImport": m65,
         "processingVideos":
             MessageLookupByLibrary.simpleMessage("Videolar işleniyor"),
         "publicLinkCreated": MessageLookupByLibrary.simpleMessage(
@@ -1476,10 +1447,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "rateTheApp":
             MessageLookupByLibrary.simpleMessage("Uygulamaya puan verin"),
         "rateUs": MessageLookupByLibrary.simpleMessage("Bizi değerlendirin"),
-        "rateUsOnStore": m23,
+        "rateUsOnStore": m66,
         "reassignMe":
             MessageLookupByLibrary.simpleMessage("\"Ben \"i yeniden atayın"),
-        "reassignedToName": m89,
+        "reassignedToName": m67,
         "reassigningLoading":
             MessageLookupByLibrary.simpleMessage("Yeniden atama..."),
         "recover": MessageLookupByLibrary.simpleMessage("Kurtarma"),
@@ -1489,7 +1460,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Hesabı kurtar"),
         "recoveryInitiated":
             MessageLookupByLibrary.simpleMessage("Kurtarma başlatıldı"),
-        "recoveryInitiatedDesc": m90,
+        "recoveryInitiatedDesc": m68,
         "recoveryKey":
             MessageLookupByLibrary.simpleMessage("Kurtarma anahtarı"),
         "recoveryKeyCopiedToClipboard": MessageLookupByLibrary.simpleMessage(
@@ -1504,12 +1475,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Kurtarma kodu doğrulandı"),
         "recoveryKeyVerifyReason": MessageLookupByLibrary.simpleMessage(
             "Kurtarma anahtarınız, şifrenizi unutmanız durumunda fotoğraflarınızı kurtarmanın tek yoludur. Kurtarma anahtarınızı Ayarlar > Hesap bölümünde bulabilirsiniz.\n\nDoğru kaydettiğinizi doğrulamak için lütfen kurtarma anahtarınızı buraya girin."),
-        "recoveryReady": m91,
+        "recoveryReady": m69,
         "recoverySuccessful":
             MessageLookupByLibrary.simpleMessage("Kurtarma başarılı!"),
         "recoveryWarning": MessageLookupByLibrary.simpleMessage(
             "Güvenilir bir kişi hesabınıza erişmeye çalışıyor"),
-        "recoveryWarningBody": m92,
+        "recoveryWarningBody": m70,
         "recreatePasswordBody": MessageLookupByLibrary.simpleMessage(
             "Cihazınız, şifrenizi doğrulamak için yeterli güce sahip değil, ancak tüm cihazlarda çalışacak şekilde yeniden oluşturabiliriz.\n\nLütfen kurtarma anahtarınızı kullanarak giriş yapın ve şifrenizi yeniden oluşturun (istediğiniz takdirde aynı şifreyi tekrar kullanabilirsiniz)."),
         "recreatePasswordTitle": MessageLookupByLibrary.simpleMessage(
@@ -1525,7 +1496,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "1. Bu kodu arkadaşlarınıza verin"),
         "referralStep2": MessageLookupByLibrary.simpleMessage(
             "2. Ücretli bir plan için kaydolsunlar"),
-        "referralStep3": m24,
+        "referralStep3": m71,
         "referrals": MessageLookupByLibrary.simpleMessage("Referanslar"),
         "referralsAreCurrentlyPaused": MessageLookupByLibrary.simpleMessage(
             "Davetler şu anda durmuş durumda"),
@@ -1556,7 +1527,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeLink": MessageLookupByLibrary.simpleMessage("Linki kaldır"),
         "removeParticipant":
             MessageLookupByLibrary.simpleMessage("Katılımcıyı kaldır"),
-        "removeParticipantBody": m25,
+        "removeParticipantBody": m72,
         "removePersonLabel":
             MessageLookupByLibrary.simpleMessage("Kişi etiketini kaldırın"),
         "removePublicLink":
@@ -1578,7 +1549,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Dosyayı yeniden adlandır"),
         "renewSubscription":
             MessageLookupByLibrary.simpleMessage("Abonelik yenileme"),
-        "renewsOn": m26,
+        "renewsOn": m73,
         "reportABug": MessageLookupByLibrary.simpleMessage("Hatayı bildir"),
         "reportBug": MessageLookupByLibrary.simpleMessage("Hata bildir"),
         "resendEmail":
@@ -1658,8 +1629,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "İnsanları davet ettiğinizde onların paylaştığı tüm fotoğrafları burada göreceksiniz"),
         "searchPersonsEmptySection": MessageLookupByLibrary.simpleMessage(
             "İşleme ve senkronizasyon tamamlandığında kişiler burada gösterilecektir"),
-        "searchResultCount": m94,
-        "searchSectionsLengthMismatch": m95,
+        "searchResultCount": m113,
+        "searchSectionsLengthMismatch": m75,
         "security": MessageLookupByLibrary.simpleMessage("Güvenlik"),
         "seePublicAlbumLinksInApp": MessageLookupByLibrary.simpleMessage(
             "Uygulamadaki herkese açık albüm bağlantılarını görün"),
@@ -1705,8 +1676,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedItemsWillBeDeletedFromAllAlbumsAndMoved":
             MessageLookupByLibrary.simpleMessage(
                 "Seçilen öğeler tüm albümlerden silinecek ve çöp kutusuna taşınacak."),
-        "selectedPhotos": m27,
-        "selectedPhotosWithYours": m28,
+        "selectedPhotos": m76,
+        "selectedPhotosWithYours": m77,
         "send": MessageLookupByLibrary.simpleMessage("Gönder"),
         "sendEmail": MessageLookupByLibrary.simpleMessage("E-posta gönder"),
         "sendInvite": MessageLookupByLibrary.simpleMessage("Davet kodu gönder"),
@@ -1737,16 +1708,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "shareAnAlbumNow":
             MessageLookupByLibrary.simpleMessage("Şimdi bir albüm paylaşın"),
         "shareLink": MessageLookupByLibrary.simpleMessage("Linki paylaş"),
-        "shareMyVerificationID": m29,
+        "shareMyVerificationID": m79,
         "shareOnlyWithThePeopleYouWant": MessageLookupByLibrary.simpleMessage(
             "Yalnızca istediğiniz kişilerle paylaşın"),
-        "shareTextConfirmOthersVerificationID": m30,
+        "shareTextConfirmOthersVerificationID": m80,
         "shareTextRecommendUsingEnte": MessageLookupByLibrary.simpleMessage(
             "Orijinal kalitede fotoğraf ve videoları kolayca paylaşabilmemiz için Ente\'yi indirin\n\nhttps://ente.io"),
-        "shareTextReferralCode": m31,
+        "shareTextReferralCode": m81,
         "shareWithNonenteUsers": MessageLookupByLibrary.simpleMessage(
             "Ente kullanıcısı olmayanlar için paylaş"),
-        "shareWithPeopleSectionTitle": m32,
+        "shareWithPeopleSectionTitle": m82,
         "shareYourFirstAlbum":
             MessageLookupByLibrary.simpleMessage("İlk albümünüzü paylaşın"),
         "sharedAlbumSectionDescription": MessageLookupByLibrary.simpleMessage(
@@ -1758,7 +1729,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Paylaşılan fotoğrafları ekle"),
         "sharedPhotoNotificationsExplanation": MessageLookupByLibrary.simpleMessage(
             "Birisi sizin de parçası olduğunuz paylaşılan bir albüme fotoğraf eklediğinde bildirim alın"),
-        "sharedWith": m97,
+        "sharedWith": m83,
         "sharedWithMe":
             MessageLookupByLibrary.simpleMessage("Benimle paylaşılan"),
         "sharedWithYou":
@@ -1776,11 +1747,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Diğer cihazlardan çıkış yap"),
         "signUpTerms": MessageLookupByLibrary.simpleMessage(
             "<u-terms>Hizmet Şartları</u-terms>\'nı ve <u-policy>Gizlilik Politikası</u-policy>\'nı kabul ediyorum"),
-        "singleFileDeleteFromDevice": m33,
+        "singleFileDeleteFromDevice": m84,
         "singleFileDeleteHighlight":
             MessageLookupByLibrary.simpleMessage("Tüm albümlerden silinecek."),
-        "singleFileInBothLocalAndRemote": m34,
-        "singleFileInRemoteOnly": m35,
+        "singleFileInBothLocalAndRemote": m85,
+        "singleFileInRemoteOnly": m86,
         "skip": MessageLookupByLibrary.simpleMessage("Geç"),
         "social": MessageLookupByLibrary.simpleMessage("Sosyal Medya"),
         "someItemsAreInBothEnteAndYourDevice":
@@ -1827,15 +1798,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "storage": MessageLookupByLibrary.simpleMessage("Depolama"),
         "storageBreakupFamily": MessageLookupByLibrary.simpleMessage("Aile"),
         "storageBreakupYou": MessageLookupByLibrary.simpleMessage("Sen"),
-        "storageInGB": m36,
+        "storageInGB": m89,
         "storageLimitExceeded":
             MessageLookupByLibrary.simpleMessage("Depolama sınırı aşıldı"),
-        "storageUsageInfo": m100,
+        "storageUsageInfo": m90,
         "streamDetails":
             MessageLookupByLibrary.simpleMessage("Yayın detayları"),
         "strongStrength": MessageLookupByLibrary.simpleMessage("Güçlü"),
-        "subAlreadyLinkedErrMessage": m37,
-        "subWillBeCancelledOn": m38,
+        "subAlreadyLinkedErrMessage": m91,
+        "subWillBeCancelledOn": m92,
         "subscribe": MessageLookupByLibrary.simpleMessage("Abone ol"),
         "subscribeToEnableSharing": MessageLookupByLibrary.simpleMessage(
             "Paylaşımı etkinleştirmek için aktif bir ücretli aboneliğe ihtiyacınız var."),
@@ -1852,7 +1823,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "suggestFeatures":
             MessageLookupByLibrary.simpleMessage("Özellik önerin"),
         "support": MessageLookupByLibrary.simpleMessage("Destek"),
-        "syncProgress": m101,
+        "syncProgress": m93,
         "syncStopped":
             MessageLookupByLibrary.simpleMessage("Senkronizasyon durduruldu"),
         "syncing": MessageLookupByLibrary.simpleMessage("Eşitleniyor..."),
@@ -1864,7 +1835,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "tapToUnlock": MessageLookupByLibrary.simpleMessage("Açmak için dokun"),
         "tapToUpload":
             MessageLookupByLibrary.simpleMessage("Yüklemek için tıklayın"),
-        "tapToUploadIsIgnoredDue": m102,
+        "tapToUploadIsIgnoredDue": m94,
         "tempErrorContactSupportIfPersists": MessageLookupByLibrary.simpleMessage(
             "Bir şeyler ters gitmiş gibi görünüyor. Lütfen bir süre sonra tekrar deneyin. Hata devam ederse, lütfen destek ekibimizle iletişime geçin."),
         "terminate": MessageLookupByLibrary.simpleMessage("Sonlandır"),
@@ -1887,7 +1858,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "theseItemsWillBeDeletedFromYourDevice":
             MessageLookupByLibrary.simpleMessage(
                 "Bu öğeler cihazınızdan silinecektir."),
-        "theyAlsoGetXGb": m39,
+        "theyAlsoGetXGb": m95,
         "theyWillBeDeletedFromAllAlbums":
             MessageLookupByLibrary.simpleMessage("Tüm albümlerden silinecek."),
         "thisActionCannotBeUndone":
@@ -1905,7 +1876,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Bu görselde exif verisi yok"),
         "thisIsMeExclamation":
             MessageLookupByLibrary.simpleMessage("Bu benim!"),
-        "thisIsPersonVerificationId": m40,
+        "thisIsPersonVerificationId": m96,
         "thisIsYourVerificationId":
             MessageLookupByLibrary.simpleMessage("Doğrulama kimliğiniz"),
         "thisWillLogYouOutOfTheFollowingDevice":
@@ -1933,11 +1904,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "total": MessageLookupByLibrary.simpleMessage("total"),
         "totalSize": MessageLookupByLibrary.simpleMessage("Toplam boyut"),
         "trash": MessageLookupByLibrary.simpleMessage("Cöp kutusu"),
-        "trashDaysLeft": m105,
+        "trashDaysLeft": m99,
         "trim": MessageLookupByLibrary.simpleMessage("Kes"),
         "trustedContacts":
             MessageLookupByLibrary.simpleMessage("Güvenilir kişiler"),
-        "trustedInviteBody": m108,
+        "trustedInviteBody": m102,
         "tryAgain": MessageLookupByLibrary.simpleMessage("Tekrar deneyiniz"),
         "turnOnBackupForAutoUpload": MessageLookupByLibrary.simpleMessage(
             "Bu cihaz klasörüne eklenen dosyaları otomatik olarak ente\'ye yüklemek için yedeklemeyi açın."),
@@ -1955,7 +1926,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "İki faktörlü kimlik doğrulama başarıyla sıfırlandı"),
         "twofactorSetup":
             MessageLookupByLibrary.simpleMessage("Cift faktör ayarı"),
-        "typeOfGallerGallerytypeIsNotSupportedForRename": m109,
+        "typeOfGallerGallerytypeIsNotSupportedForRename": m103,
         "unarchive": MessageLookupByLibrary.simpleMessage("Arşivden cıkar"),
         "unarchiveAlbum":
             MessageLookupByLibrary.simpleMessage("Arşivden Çıkar"),
@@ -1980,10 +1951,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "updatingFolderSelection": MessageLookupByLibrary.simpleMessage(
             "Klasör seçimi güncelleniyor..."),
         "upgrade": MessageLookupByLibrary.simpleMessage("Yükselt"),
-        "uploadIsIgnoredDueToIgnorereason": m110,
+        "uploadIsIgnoredDueToIgnorereason": m104,
         "uploadingFilesToAlbum": MessageLookupByLibrary.simpleMessage(
             "Dosyalar albüme taşınıyor..."),
-        "uploadingMultipleMemories": m111,
+        "uploadingMultipleMemories": m105,
         "uploadingSingleMemory":
             MessageLookupByLibrary.simpleMessage("1 anı korunuyor..."),
         "upto50OffUntil4thDec": MessageLookupByLibrary.simpleMessage(
@@ -2002,7 +1973,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "useSelectedPhoto":
             MessageLookupByLibrary.simpleMessage("Seçilen fotoğrafı kullan"),
         "usedSpace": MessageLookupByLibrary.simpleMessage("Kullanılan alan"),
-        "validTill": m41,
+        "validTill": m106,
         "verificationFailedPleaseTryAgain":
             MessageLookupByLibrary.simpleMessage(
                 "Doğrulama başarısız oldu, lütfen tekrar deneyin"),
@@ -2011,7 +1982,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "verify": MessageLookupByLibrary.simpleMessage("Doğrula"),
         "verifyEmail":
             MessageLookupByLibrary.simpleMessage("E-posta adresini doğrulayın"),
-        "verifyEmailID": m42,
+        "verifyEmailID": m107,
         "verifyIDLabel": MessageLookupByLibrary.simpleMessage("Doğrula"),
         "verifyPasskey":
             MessageLookupByLibrary.simpleMessage("Şifrenizi doğrulayın"),
@@ -2039,7 +2010,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "viewRecoveryKey": MessageLookupByLibrary.simpleMessage(
             "Kurtarma anahtarını görüntüle"),
         "viewer": MessageLookupByLibrary.simpleMessage("Görüntüleyici"),
-        "viewersSuccessfullyAdded": m112,
         "visitWebToManage": MessageLookupByLibrary.simpleMessage(
             "Aboneliğinizi yönetmek için lütfen web.ente.io adresini ziyaret edin"),
         "waitingForVerification":
@@ -2052,7 +2022,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "weDontSupportEditingPhotosAndAlbumsThatYouDont":
             MessageLookupByLibrary.simpleMessage(
                 "Henüz sahibi olmadığınız fotoğraf ve albümlerin düzenlenmesini desteklemiyoruz"),
-        "weHaveSendEmailTo": m43,
+        "weHaveSendEmailTo": m109,
         "weakStrength": MessageLookupByLibrary.simpleMessage("Zayıf"),
         "welcomeBack":
             MessageLookupByLibrary.simpleMessage("Tekrardan hoşgeldin!"),
@@ -2060,7 +2030,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "whyAddTrustContact": MessageLookupByLibrary.simpleMessage("."),
         "yearShort": MessageLookupByLibrary.simpleMessage("yıl"),
         "yearly": MessageLookupByLibrary.simpleMessage("Yıllık"),
-        "yearsAgo": m44,
+        "yearsAgo": m110,
         "yes": MessageLookupByLibrary.simpleMessage("Evet"),
         "yesCancel": MessageLookupByLibrary.simpleMessage("Evet, iptal et"),
         "yesConvertToViewer": MessageLookupByLibrary.simpleMessage(
@@ -2093,7 +2063,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Kendinizle paylaşamazsınız"),
         "youDontHaveAnyArchivedItems":
             MessageLookupByLibrary.simpleMessage("Arşivlenmiş öğeniz yok."),
-        "youHaveSuccessfullyFreedUp": m45,
+        "youHaveSuccessfullyFreedUp": m112,
         "yourAccountHasBeenDeleted":
             MessageLookupByLibrary.simpleMessage("Hesabınız silindi"),
         "yourMap": MessageLookupByLibrary.simpleMessage("Haritalarınız"),

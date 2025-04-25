@@ -20,36 +20,33 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'da';
 
-  static String m2(count) =>
+  static String m8(count) =>
       "${Intl.plural(count, zero: 'Ingen Deltagere', one: '1 Deltager', other: '${count} Deltagere')}";
 
-  static String m4(user) =>
+  static String m13(user) =>
       "${user} vil ikke kunne tilføje flere billeder til dette album\n\nDe vil stadig kunne fjerne eksisterende billeder tilføjet af dem";
 
-  static String m10(supportEmail) =>
+  static String m24(supportEmail) =>
       "Send venligst en email til ${supportEmail} fra din registrerede email adresse";
 
-  static String m14(storageAmountInGB) =>
+  static String m35(storageAmountInGB) =>
       "${storageAmountInGB} GB hver gang nogen tilmelder sig et betalt abonnement og anvender din kode";
 
-  static String m17(expiryTime) => "Link udløber den ${expiryTime}";
+  static String m45(expiryTime) => "Link udløber den ${expiryTime}";
 
-  static String m18(count, formattedCount) =>
-      "${Intl.plural(count, zero: 'ingen minder', one: '${formattedCount} minde', other: '${formattedCount} minder')}";
-
-  static String m20(passwordStrengthValue) =>
+  static String m55(passwordStrengthValue) =>
       "Kodeordets styrke: ${passwordStrengthValue}";
 
-  static String m27(count) => "${count} valgt";
+  static String m76(count) => "${count} valgt";
 
-  static String m30(verificationID) =>
+  static String m80(verificationID) =>
       "Hey, kan du bekræfte, at dette er dit ente.io verifikation ID: ${verificationID}";
 
-  static String m36(storageAmountInGB) => "${storageAmountInGB} GB";
+  static String m89(storageAmountInGB) => "${storageAmountInGB} GB";
 
-  static String m39(storageAmountInGB) => "De får også ${storageAmountInGB} GB";
+  static String m95(storageAmountInGB) => "De får også ${storageAmountInGB} GB";
 
-  static String m43(email) =>
+  static String m109(email) =>
       "Vi har sendt en email til <green>${email}</green>";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -78,7 +75,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "after1Week": MessageLookupByLibrary.simpleMessage("Efter 1 uge"),
         "after1Year": MessageLookupByLibrary.simpleMessage("Efter 1 år"),
         "albumOwner": MessageLookupByLibrary.simpleMessage("Ejer"),
-        "albumParticipantsCount": m2,
+        "albumParticipantsCount": m8,
         "albumUpdated":
             MessageLookupByLibrary.simpleMessage("Album er opdateret"),
         "allowAddPhotosDescription": MessageLookupByLibrary.simpleMessage(
@@ -98,7 +95,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "canOnlyRemoveFilesOwnedByYou": MessageLookupByLibrary.simpleMessage(
             "Kan kun fjerne filer ejet af dig"),
         "cancel": MessageLookupByLibrary.simpleMessage("Annuller"),
-        "cannotAddMorePhotosAfterBecomingViewer": m4,
+        "cannotAddMorePhotosAfterBecomingViewer": m13,
         "cannotDeleteSharedFiles":
             MessageLookupByLibrary.simpleMessage("Kan ikke slette delte filer"),
         "changeEmail":
@@ -182,7 +179,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "discover_wallpapers":
             MessageLookupByLibrary.simpleMessage("Baggrundsbilleder"),
         "doThisLater": MessageLookupByLibrary.simpleMessage("Gør det senere"),
-        "dropSupportEmail": m10,
+        "dropSupportEmail": m24,
         "eligible": MessageLookupByLibrary.simpleMessage("kvalificeret"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "emailAlreadyRegistered": MessageLookupByLibrary.simpleMessage(
@@ -222,7 +219,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Find folk hurtigt ved navn"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Glemt adgangskode"),
-        "freeStorageOnReferralSuccess": m14,
+        "freeStorageOnReferralSuccess": m35,
         "freeUpDeviceSpace":
             MessageLookupByLibrary.simpleMessage("Frigør enhedsplads"),
         "freeUpDeviceSpaceDesc": MessageLookupByLibrary.simpleMessage(
@@ -256,7 +253,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enheds grænse"),
         "linkEnabled": MessageLookupByLibrary.simpleMessage("Aktiveret"),
         "linkExpired": MessageLookupByLibrary.simpleMessage("Udløbet"),
-        "linkExpiresOn": m17,
+        "linkExpiresOn": m45,
         "linkExpiry": MessageLookupByLibrary.simpleMessage("Udløb af link"),
         "linkHasExpired":
             MessageLookupByLibrary.simpleMessage("Linket er udløbet"),
@@ -280,7 +277,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Gennemgå og ryd lokal cache-lagring."),
         "manageParticipants":
             MessageLookupByLibrary.simpleMessage("Administrer"),
-        "memoryCount": m18,
         "mlConsent":
             MessageLookupByLibrary.simpleMessage("Aktiver maskinlæring"),
         "mlConsentPrivacy": MessageLookupByLibrary.simpleMessage(
@@ -307,7 +303,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "passwordChangedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Adgangskoden er blevet ændret"),
         "passwordLock": MessageLookupByLibrary.simpleMessage("Adgangskodelås"),
-        "passwordStrength": m20,
+        "passwordStrength": m55,
         "passwordWarning": MessageLookupByLibrary.simpleMessage(
             "Vi gemmer ikke denne adgangskode, så hvis du glemmer den <underline>kan vi ikke dekryptere dine data</underline>"),
         "pendingItems":
@@ -379,7 +375,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectedFoldersWillBeEncryptedAndBackedUp":
             MessageLookupByLibrary.simpleMessage(
                 "Valgte mapper vil blive krypteret og sikkerhedskopieret"),
-        "selectedPhotos": m27,
+        "selectedPhotos": m76,
         "sendEmail": MessageLookupByLibrary.simpleMessage("Send email"),
         "sendLink": MessageLookupByLibrary.simpleMessage("Send link"),
         "setPasswordTitle":
@@ -387,7 +383,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "setupComplete":
             MessageLookupByLibrary.simpleMessage("Opsætning fuldført"),
         "shareALink": MessageLookupByLibrary.simpleMessage("Del et link"),
-        "shareTextConfirmOthersVerificationID": m30,
+        "shareTextConfirmOthersVerificationID": m80,
         "shareWithNonenteUsers":
             MessageLookupByLibrary.simpleMessage("Del med ikke Ente brugere"),
         "showMemories": MessageLookupByLibrary.simpleMessage("Vis minder"),
@@ -407,7 +403,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Beklager, vi kunne ikke generere sikre krypteringsnøgler på denne enhed.\n\nForsøg venligst at oprette en konto fra en anden enhed."),
         "status": MessageLookupByLibrary.simpleMessage("Status"),
-        "storageInGB": m36,
+        "storageInGB": m89,
         "strongStrength": MessageLookupByLibrary.simpleMessage("Stærkt"),
         "subscribe": MessageLookupByLibrary.simpleMessage("Abonner"),
         "subscribeToEnableSharing": MessageLookupByLibrary.simpleMessage(
@@ -421,7 +417,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Afslut session?"),
         "termsOfServicesTitle":
             MessageLookupByLibrary.simpleMessage("Betingelser"),
-        "theyAlsoGetXGb": m39,
+        "theyAlsoGetXGb": m95,
         "thisCanBeUsedToRecoverYourAccountIfYou":
             MessageLookupByLibrary.simpleMessage(
                 "Dette kan bruges til at gendanne din konto, hvis du mister din anden faktor"),
@@ -460,7 +456,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "viewer": MessageLookupByLibrary.simpleMessage("Seer"),
         "waitingForWifi":
             MessageLookupByLibrary.simpleMessage("Venter på Wi-fi..."),
-        "weHaveSendEmailTo": m43,
+        "weHaveSendEmailTo": m109,
         "weakStrength": MessageLookupByLibrary.simpleMessage("Svagt"),
         "welcomeBack":
             MessageLookupByLibrary.simpleMessage("Velkommen tilbage!"),

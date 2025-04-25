@@ -14,12 +14,9 @@ PODS:
     - Flutter
   - device_info_plus (0.0.1):
     - Flutter
-  - ffmpeg-kit-ios-full-gpl (6.0)
-  - ffmpeg_kit_flutter_full_gpl (6.0.3):
-    - ffmpeg_kit_flutter_full_gpl/full-gpl (= 6.0.3)
-    - Flutter
-  - ffmpeg_kit_flutter_full_gpl/full-gpl (6.0.3):
-    - ffmpeg-kit-ios-full-gpl (= 6.0)
+  - ffmpeg_kit_custom (6.0.3)
+  - ffmpeg_kit_flutter (6.0.3):
+    - ffmpeg_kit_custom
     - Flutter
   - file_saver (0.0.1):
     - Flutter
@@ -78,8 +75,6 @@ PODS:
     - Flutter
   - flutter_sodium (0.0.1):
     - Flutter
-  - flutter_web_auth_2 (3.0.0):
-    - Flutter
   - fluttertoast (0.0.2):
     - Flutter
   - GoogleDataTransport (10.1.0):
@@ -132,6 +127,9 @@ PODS:
   - libwebp/sharpyuv (1.5.0)
   - libwebp/webp (1.5.0):
     - libwebp/sharpyuv
+  - local_auth_darwin (0.0.1):
+    - Flutter
+    - FlutterMacOS
   - local_auth_ios (0.0.1):
     - Flutter
   - Mantle (2.2.0):
@@ -240,9 +238,6 @@ PODS:
     - Flutter
   - wakelock_plus (0.0.1):
     - Flutter
-  - webcrypto (0.1.1):
-    - Flutter
-    - FlutterMacOS
 
 DEPENDENCIES:
   - app_links (from `.symlinks/plugins/app_links/ios`)
@@ -252,7 +247,7 @@ DEPENDENCIES:
   - cupertino_http (from `.symlinks/plugins/cupertino_http/darwin`)
   - dart_ui_isolate (from `.symlinks/plugins/dart_ui_isolate/ios`)
   - device_info_plus (from `.symlinks/plugins/device_info_plus/ios`)
-  - ffmpeg_kit_flutter_full_gpl (from `.symlinks/plugins/ffmpeg_kit_flutter_full_gpl/ios`)
+  - ffmpeg_kit_flutter (from `.symlinks/plugins/ffmpeg_kit_flutter/ios`)
   - file_saver (from `.symlinks/plugins/file_saver/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - firebase_messaging (from `.symlinks/plugins/firebase_messaging/ios`)
@@ -264,13 +259,13 @@ DEPENDENCIES:
   - flutter_native_splash (from `.symlinks/plugins/flutter_native_splash/ios`)
   - flutter_secure_storage (from `.symlinks/plugins/flutter_secure_storage/ios`)
   - flutter_sodium (from `.symlinks/plugins/flutter_sodium/ios`)
-  - flutter_web_auth_2 (from `.symlinks/plugins/flutter_web_auth_2/ios`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
   - home_widget (from `.symlinks/plugins/home_widget/ios`)
   - image_editor_common (from `.symlinks/plugins/image_editor_common/ios`)
   - in_app_purchase_storekit (from `.symlinks/plugins/in_app_purchase_storekit/darwin`)
   - integration_test (from `.symlinks/plugins/integration_test/ios`)
   - launcher_icon_switcher (from `.symlinks/plugins/launcher_icon_switcher/ios`)
+  - local_auth_darwin (from `.symlinks/plugins/local_auth_darwin/darwin`)
   - local_auth_ios (from `.symlinks/plugins/local_auth_ios/ios`)
   - maps_launcher (from `.symlinks/plugins/maps_launcher/ios`)
   - media_extension (from `.symlinks/plugins/media_extension/ios`)
@@ -301,11 +296,11 @@ DEPENDENCIES:
   - video_thumbnail (from `.symlinks/plugins/video_thumbnail/ios`)
   - volume_controller (from `.symlinks/plugins/volume_controller/ios`)
   - wakelock_plus (from `.symlinks/plugins/wakelock_plus/ios`)
-  - webcrypto (from `.symlinks/plugins/webcrypto/darwin`)
 
 SPEC REPOS:
+  https://github.com/ente-io/ffmpeg-kit-custom-repo-ios.git:
+    - ffmpeg_kit_custom
   trunk:
-    - ffmpeg-kit-ios-full-gpl
     - Firebase
     - FirebaseCore
     - FirebaseCoreInternal
@@ -340,8 +335,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/dart_ui_isolate/ios"
   device_info_plus:
     :path: ".symlinks/plugins/device_info_plus/ios"
-  ffmpeg_kit_flutter_full_gpl:
-    :path: ".symlinks/plugins/ffmpeg_kit_flutter_full_gpl/ios"
+  ffmpeg_kit_flutter:
+    :path: ".symlinks/plugins/ffmpeg_kit_flutter/ios"
   file_saver:
     :path: ".symlinks/plugins/file_saver/ios"
   firebase_core:
@@ -364,8 +359,6 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/flutter_secure_storage/ios"
   flutter_sodium:
     :path: ".symlinks/plugins/flutter_sodium/ios"
-  flutter_web_auth_2:
-    :path: ".symlinks/plugins/flutter_web_auth_2/ios"
   fluttertoast:
     :path: ".symlinks/plugins/fluttertoast/ios"
   home_widget:
@@ -378,6 +371,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/integration_test/ios"
   launcher_icon_switcher:
     :path: ".symlinks/plugins/launcher_icon_switcher/ios"
+  local_auth_darwin:
+    :path: ".symlinks/plugins/local_auth_darwin/darwin"
   local_auth_ios:
     :path: ".symlinks/plugins/local_auth_ios/ios"
   maps_launcher:
@@ -438,8 +433,6 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/volume_controller/ios"
   wakelock_plus:
     :path: ".symlinks/plugins/wakelock_plus/ios"
-  webcrypto:
-    :path: ".symlinks/plugins/webcrypto/darwin"
 
 SPEC CHECKSUMS:
   app_links: 76b66b60cc809390ca1ad69bfd66b998d2387ac7
@@ -449,8 +442,8 @@ SPEC CHECKSUMS:
   cupertino_http: 94ac07f5ff090b8effa6c5e2c47871d48ab7c86c
   dart_ui_isolate: 46f6714abe6891313267153ef6f9748d8ecfcab1
   device_info_plus: 335f3ce08d2e174b9fdc3db3db0f4e3b1f66bd89
-  ffmpeg-kit-ios-full-gpl: 78f81da9b8c14f62f5013dd90f0c9c80bd720140
-  ffmpeg_kit_flutter_full_gpl: ce18b888487c05c46ed252cd2e7956812f2e3bd1
+  ffmpeg_kit_custom: 682b4f2f1ff1f8abae5a92f6c3540f2441d5be99
+  ffmpeg_kit_flutter: 915b345acc97d4142e8a9a8549d177ff10f043f5
   file_saver: 6cdbcddd690cb02b0c1a0c225b37cd805c2bf8b6
   Firebase: d80354ed7f6df5f9aca55e9eb47cc4b634735eaf
   firebase_core: 6cbed78b4f298ed103a9fd034e6dbc846320480f
@@ -467,7 +460,6 @@ SPEC CHECKSUMS:
   flutter_native_splash: 6cad9122ea0fad137d23137dd14b937f3e90b145
   flutter_secure_storage: 2c2ff13db9e0a5647389bff88b0ecac56e3f3418
   flutter_sodium: 7e4621538491834eba53bd524547854bcbbd6987
-  flutter_web_auth_2: 5c8d9dcd7848b5a9efb086d24e7a9adcae979c80
   fluttertoast: 2c67e14dce98bbdb200df9e1acf610d7a6264ea1
   GoogleDataTransport: aae35b7ea0c09004c3797d53c8c41f66f219d6a7
   GoogleUtilities: 26a3abef001b6533cf678d3eb38fd3f614b7872d
@@ -477,6 +469,7 @@ SPEC CHECKSUMS:
   integration_test: 4a889634ef21a45d28d50d622cf412dc6d9f586e
   launcher_icon_switcher: 84c218d233505aa7d8655d8fa61a3ba802c022da
   libwebp: 02b23773aedb6ff1fd38cec7a77b81414c6842a8
+  local_auth_darwin: 553ce4f9b16d3fdfeafce9cf042e7c9f77c1c391
   local_auth_ios: f7a1841beef3151d140a967c2e46f30637cdf451
   Mantle: c5aa8794a29a022dfbbfc9799af95f477a69b62d
   maps_launcher: edf829809ba9e894d70e569bab11c16352dedb45
@@ -517,8 +510,7 @@ SPEC CHECKSUMS:
   video_thumbnail: 584ccfa55d8fd2f3d5507218b0a18d84c839c620
   volume_controller: 3657a1f65bedb98fa41ff7dc5793537919f31b12
   wakelock_plus: 04623e3f525556020ebd4034310f20fe7fda8b49
-  webcrypto: a5f5eb3e375cf0a99993e207e97cdcab5c94ce2e
 
-PODFILE CHECKSUM: 20e086e6008977d43a3d40260f3f9bffcac748dd
+PODFILE CHECKSUM: a8ef88ad74ba499756207e7592c6071a96756d18
 
 COCOAPODS: 1.16.2

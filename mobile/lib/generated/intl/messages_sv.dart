@@ -20,95 +20,89 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'sv';
 
-  static String m48(count) =>
-      "${Intl.plural(count, one: 'Lägg till objekt', other: 'Lägg till objekt')}";
-
-  static String m2(count) =>
+  static String m8(count) =>
       "${Intl.plural(count, zero: 'Inga deltagare', one: '1 deltagare', other: '${count} deltagare')}";
 
-  static String m52(versionValue) => "Version: ${versionValue}";
+  static String m9(versionValue) => "Version: ${versionValue}";
 
-  static String m53(freeAmount, storageUnit) =>
+  static String m10(freeAmount, storageUnit) =>
       "${freeAmount} ${storageUnit} gratis";
 
-  static String m4(user) =>
+  static String m13(user) =>
       "${user} kommer inte att kunna lägga till fler foton till detta album\n\nDe kommer fortfarande att kunna ta bort befintliga foton som lagts till av dem";
 
-  static String m5(isFamilyMember, storageAmountInGb) =>
+  static String m14(isFamilyMember, storageAmountInGb) =>
       "${Intl.select(isFamilyMember, {
             'true': 'Din familj har begärt ${storageAmountInGb} GB',
             'false': '${storageAmountInGb}',
             'other': 'Du har begärt ${storageAmountInGb} GB!',
           })}";
 
-  static String m8(count) =>
+  static String m21(count) =>
       "${Intl.plural(count, one: 'Radera ${count} objekt', other: 'Radera ${count} objekt')}";
 
-  static String m10(supportEmail) =>
+  static String m24(supportEmail) =>
       "Vänligen skicka ett e-postmeddelande till ${supportEmail} från din registrerade e-postadress";
 
-  static String m12(count, formattedSize) =>
+  static String m26(count, formattedSize) =>
       "${count} filer, ${formattedSize} vardera";
 
-  static String m13(email) =>
+  static String m29(email) =>
       "${email} har inte ett Ente-konto.\n\nSkicka dem en inbjudan för att dela bilder.";
 
-  static String m14(storageAmountInGB) =>
+  static String m35(storageAmountInGB) =>
       "${storageAmountInGB} GB varje gång någon registrerar sig för en betalplan och tillämpar din kod";
 
-  static String m16(count) =>
+  static String m42(count) =>
       "${Intl.plural(count, one: '${count} objekt', other: '${count} objekt')}";
 
-  static String m17(expiryTime) => "Länken upphör att gälla ${expiryTime}";
+  static String m45(expiryTime) => "Länken upphör att gälla ${expiryTime}";
 
-  static String m76(count) =>
-      "${Intl.plural(count, one: 'Flytta objekt', other: 'Flytta objekt')}";
+  static String m52(name) => "Inte ${name}?";
 
-  static String m79(name) => "Inte ${name}?";
-
-  static String m19(familyAdminEmail) =>
+  static String m53(familyAdminEmail) =>
       "Kontakta ${familyAdminEmail} för att ändra din kod.";
 
-  static String m20(passwordStrengthValue) =>
+  static String m55(passwordStrengthValue) =>
       "Lösenordsstyrka: ${passwordStrengthValue}";
 
-  static String m23(storeName) => "Betygsätt oss på ${storeName}";
+  static String m66(storeName) => "Betygsätt oss på ${storeName}";
 
-  static String m24(storageInGB) => "3. Ni får båda ${storageInGB} GB* gratis";
+  static String m71(storageInGB) => "3. Ni får båda ${storageInGB} GB* gratis";
 
-  static String m25(userEmail) =>
+  static String m72(userEmail) =>
       "${userEmail} kommer att tas bort från detta delade album\n\nAlla bilder som lagts till av dem kommer också att tas bort från albumet";
 
-  static String m94(count) =>
+  static String m113(count) =>
       "${Intl.plural(count, one: '${count} resultat hittades', other: '${count} resultat hittades')}";
 
-  static String m29(verificationID) =>
+  static String m79(verificationID) =>
       "Här är mitt verifierings-ID: ${verificationID} för ente.io.";
 
-  static String m30(verificationID) =>
+  static String m80(verificationID) =>
       "Hallå, kan du bekräfta att detta är ditt ente.io verifierings-ID: ${verificationID}";
 
-  static String m31(referralCode, referralStorageInGB) =>
+  static String m81(referralCode, referralStorageInGB) =>
       "Ente värvningskod: ${referralCode} \n\nTillämpa den i Inställningar → Allmänt → Hänvisningar för att få ${referralStorageInGB} GB gratis när du registrerar dig för en betalplan\n\nhttps://ente.io";
 
-  static String m32(numberOfPeople) =>
+  static String m82(numberOfPeople) =>
       "${Intl.plural(numberOfPeople, zero: 'Dela med specifika personer', one: 'Delad med en person', other: 'Delad med ${numberOfPeople} personer')}";
 
-  static String m36(storageAmountInGB) => "${storageAmountInGB} GB";
+  static String m89(storageAmountInGB) => "${storageAmountInGB} GB";
 
-  static String m39(storageAmountInGB) =>
+  static String m95(storageAmountInGB) =>
       "De får också ${storageAmountInGB} GB";
 
-  static String m40(email) => "Detta är ${email}s verifierings-ID";
+  static String m96(email) => "Detta är ${email}s verifierings-ID";
 
-  static String m111(count) => "Bevarar ${count} minnen...";
+  static String m105(count) => "Bevarar ${count} minnen...";
 
-  static String m42(email) => "Bekräfta ${email}";
+  static String m107(email) => "Bekräfta ${email}";
 
-  static String m43(email) =>
+  static String m109(email) =>
       "Vi har skickat ett e-postmeddelande till <green>${email}</green>";
 
-  static String m44(count) =>
+  static String m110(count) =>
       "${Intl.plural(count, one: '${count} år sedan', other: '${count} år sedan')}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -130,7 +124,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Lägg till samarbetspartner"),
         "addFromDevice":
             MessageLookupByLibrary.simpleMessage("Lägg till från enhet"),
-        "addItem": m48,
         "addLocationButton": MessageLookupByLibrary.simpleMessage("Lägg till"),
         "addMore": MessageLookupByLibrary.simpleMessage("Lägg till fler"),
         "addName": MessageLookupByLibrary.simpleMessage("Lägg till namn"),
@@ -145,7 +138,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "after1Week": MessageLookupByLibrary.simpleMessage("Om en vecka"),
         "after1Year": MessageLookupByLibrary.simpleMessage("Om ett år"),
         "albumOwner": MessageLookupByLibrary.simpleMessage("Ägare"),
-        "albumParticipantsCount": m2,
+        "albumParticipantsCount": m8,
         "albumUpdated":
             MessageLookupByLibrary.simpleMessage("Album uppdaterat"),
         "albums": MessageLookupByLibrary.simpleMessage("Album"),
@@ -156,7 +149,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "allowDownloads":
             MessageLookupByLibrary.simpleMessage("Tillåt nedladdningar"),
         "androidCancelButton": MessageLookupByLibrary.simpleMessage("Avbryt"),
-        "appVersion": m52,
+        "appVersion": m9,
         "apply": MessageLookupByLibrary.simpleMessage("Verkställ"),
         "applyCodeTitle": MessageLookupByLibrary.simpleMessage("Använd kod"),
         "areYouSureYouWantToLogout": MessageLookupByLibrary.simpleMessage(
@@ -166,7 +159,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "authenticationFailedPleaseTryAgain":
             MessageLookupByLibrary.simpleMessage(
                 "Autentisering misslyckades, försök igen"),
-        "availableStorageSpace": m53,
+        "availableStorageSpace": m10,
         "backupSettings": MessageLookupByLibrary.simpleMessage(
             "Säkerhetskopieringsinställningar"),
         "backupStatus":
@@ -179,7 +172,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "canOnlyRemoveFilesOwnedByYou": MessageLookupByLibrary.simpleMessage(
             "Kan endast ta bort filer som ägs av dig"),
         "cancel": MessageLookupByLibrary.simpleMessage("Avbryt"),
-        "cannotAddMorePhotosAfterBecomingViewer": m4,
+        "cannotAddMorePhotosAfterBecomingViewer": m13,
         "change": MessageLookupByLibrary.simpleMessage("Ändra"),
         "changeEmail":
             MessageLookupByLibrary.simpleMessage("Ändra e-postadress"),
@@ -197,7 +190,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Hämta kostnadsfri lagring"),
         "claimMore": MessageLookupByLibrary.simpleMessage("Begär mer!"),
         "claimed": MessageLookupByLibrary.simpleMessage("Nyttjad"),
-        "claimedStorageSoFar": m5,
+        "claimedStorageSoFar": m14,
         "clearIndexes": MessageLookupByLibrary.simpleMessage("Rensa index"),
         "close": MessageLookupByLibrary.simpleMessage("Stäng"),
         "codeAppliedPageTitle":
@@ -266,7 +259,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Vänligen skicka ett e-postmeddelande till <warning>account-deletion@ente.io</warning> från din registrerade e-postadress."),
         "deleteFromDevice":
             MessageLookupByLibrary.simpleMessage("Radera från enhet"),
-        "deleteItemCount": m8,
+        "deleteItemCount": m21,
         "deletePhotos": MessageLookupByLibrary.simpleMessage("Radera foton"),
         "deleteReason1": MessageLookupByLibrary.simpleMessage(
             "Det saknas en viktig funktion som jag behöver"),
@@ -292,14 +285,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "discover_receipts": MessageLookupByLibrary.simpleMessage("Kvitton"),
         "doThisLater": MessageLookupByLibrary.simpleMessage("Gör detta senare"),
         "done": MessageLookupByLibrary.simpleMessage("Klar"),
-        "dropSupportEmail": m10,
-        "duplicateItemsGroup": m12,
+        "dropSupportEmail": m24,
+        "duplicateItemsGroup": m26,
         "edit": MessageLookupByLibrary.simpleMessage("Redigera"),
         "eligible": MessageLookupByLibrary.simpleMessage("berättigad"),
         "email": MessageLookupByLibrary.simpleMessage("E-post"),
         "emailAlreadyRegistered": MessageLookupByLibrary.simpleMessage(
             "E-postadress redan registrerad."),
-        "emailNoEnteAccount": m13,
+        "emailNoEnteAccount": m29,
         "emailNotRegistered": MessageLookupByLibrary.simpleMessage(
             "E-postadressen är inte registrerad."),
         "encryption": MessageLookupByLibrary.simpleMessage("Kryptering"),
@@ -349,7 +342,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Glömt lösenord"),
         "freeStorageClaimed":
             MessageLookupByLibrary.simpleMessage("Gratis lagring begärd"),
-        "freeStorageOnReferralSuccess": m14,
+        "freeStorageOnReferralSuccess": m35,
         "freeStorageUsable": MessageLookupByLibrary.simpleMessage(
             "Gratis lagringsutrymme som kan användas"),
         "freeTrial": MessageLookupByLibrary.simpleMessage("Gratis provperiod"),
@@ -386,7 +379,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Bjud in dina vänner"),
         "inviteYourFriendsToEnte": MessageLookupByLibrary.simpleMessage(
             "Bjud in dina vänner till Ente"),
-        "itemCount": m16,
+        "itemCount": m42,
         "itemsWillBeRemovedFromAlbum": MessageLookupByLibrary.simpleMessage(
             "Valda objekt kommer att tas bort från detta album"),
         "keepPhotos": MessageLookupByLibrary.simpleMessage("Behåll foton"),
@@ -399,7 +392,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "linkDeviceLimit": MessageLookupByLibrary.simpleMessage("Enhetsgräns"),
         "linkEnabled": MessageLookupByLibrary.simpleMessage("Aktiverat"),
         "linkExpired": MessageLookupByLibrary.simpleMessage("Upphört"),
-        "linkExpiresOn": m17,
+        "linkExpiresOn": m45,
         "linkExpiry": MessageLookupByLibrary.simpleMessage("Länken upphör"),
         "linkHasExpired":
             MessageLookupByLibrary.simpleMessage("Länk har upphört att gälla"),
@@ -426,7 +419,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "mlConsentTitle":
             MessageLookupByLibrary.simpleMessage("Aktivera maskininlärning?"),
         "moderateStrength": MessageLookupByLibrary.simpleMessage("Måttligt"),
-        "moveItem": m76,
         "moveToAlbum":
             MessageLookupByLibrary.simpleMessage("Flytta till album"),
         "movingFilesToAlbum":
@@ -448,9 +440,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "noResults": MessageLookupByLibrary.simpleMessage("Inga resultat"),
         "noResultsFound":
             MessageLookupByLibrary.simpleMessage("Inga resultat hittades"),
-        "notPersonLabel": m79,
+        "notPersonLabel": m52,
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
-        "onlyFamilyAdminCanChangeCode": m19,
+        "onlyFamilyAdminCanChangeCode": m53,
         "oops": MessageLookupByLibrary.simpleMessage("Hoppsan"),
         "oopsSomethingWentWrong":
             MessageLookupByLibrary.simpleMessage("Oj, något gick fel"),
@@ -461,7 +453,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "passwordChangedSuccessfully":
             MessageLookupByLibrary.simpleMessage("Lösenordet har ändrats"),
         "passwordLock": MessageLookupByLibrary.simpleMessage("Lösenordskydd"),
-        "passwordStrength": m20,
+        "passwordStrength": m55,
         "passwordWarning": MessageLookupByLibrary.simpleMessage(
             "Vi lagrar inte detta lösenord, så om du glömmer bort det, <underline>kan vi inte dekryptera dina data</underline>"),
         "peopleUsingYourCode": MessageLookupByLibrary.simpleMessage(
@@ -478,7 +470,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Integritetspolicy"),
         "publicLinkEnabled":
             MessageLookupByLibrary.simpleMessage("Offentlig länk aktiverad"),
-        "rateUsOnStore": m23,
+        "rateUsOnStore": m66,
         "recover": MessageLookupByLibrary.simpleMessage("Återställ"),
         "recoverAccount":
             MessageLookupByLibrary.simpleMessage("Återställ konto"),
@@ -508,7 +500,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "1. Ge denna kod till dina vänner"),
         "referralStep2": MessageLookupByLibrary.simpleMessage(
             "2. De registrerar sig för en betalplan"),
-        "referralStep3": m24,
+        "referralStep3": m71,
         "referralsAreCurrentlyPaused": MessageLookupByLibrary.simpleMessage(
             "Hänvisningar är för närvarande pausade"),
         "remove": MessageLookupByLibrary.simpleMessage("Ta bort"),
@@ -519,7 +511,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "removeLink": MessageLookupByLibrary.simpleMessage("Radera länk"),
         "removeParticipant":
             MessageLookupByLibrary.simpleMessage("Ta bort användaren"),
-        "removeParticipantBody": m25,
+        "removeParticipantBody": m72,
         "removeShareItemsWarning": MessageLookupByLibrary.simpleMessage(
             "Några av de objekt som du tar bort lades av andra personer, och du kommer att förlora tillgång till dem"),
         "removeWithQuestionMark":
@@ -552,7 +544,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Albumnamn"),
         "searchFileTypesAndNamesEmptySection":
             MessageLookupByLibrary.simpleMessage("Filtyper och namn"),
-        "searchResultCount": m94,
+        "searchResultCount": m113,
         "selectAlbum": MessageLookupByLibrary.simpleMessage("Välj album"),
         "selectAll": MessageLookupByLibrary.simpleMessage("Markera allt"),
         "selectFoldersForBackup": MessageLookupByLibrary.simpleMessage(
@@ -575,14 +567,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "share": MessageLookupByLibrary.simpleMessage("Dela"),
         "shareALink": MessageLookupByLibrary.simpleMessage("Dela en länk"),
         "shareLink": MessageLookupByLibrary.simpleMessage("Dela länk"),
-        "shareMyVerificationID": m29,
-        "shareTextConfirmOthersVerificationID": m30,
+        "shareMyVerificationID": m79,
+        "shareTextConfirmOthersVerificationID": m80,
         "shareTextRecommendUsingEnte": MessageLookupByLibrary.simpleMessage(
             "Ladda ner Ente så att vi enkelt kan dela bilder och videor med originell kvalitet\n\nhttps://ente.io"),
-        "shareTextReferralCode": m31,
+        "shareTextReferralCode": m81,
         "shareWithNonenteUsers": MessageLookupByLibrary.simpleMessage(
             "Dela med icke-Ente användare"),
-        "shareWithPeopleSectionTitle": m32,
+        "shareWithPeopleSectionTitle": m82,
         "shareYourFirstAlbum":
             MessageLookupByLibrary.simpleMessage("Dela ditt första album"),
         "sharedAlbumSectionDescription": MessageLookupByLibrary.simpleMessage(
@@ -613,7 +605,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "sortAlbumsBy": MessageLookupByLibrary.simpleMessage("Sortera efter"),
         "status": MessageLookupByLibrary.simpleMessage("Status"),
         "storageBreakupYou": MessageLookupByLibrary.simpleMessage("Du"),
-        "storageInGB": m36,
+        "storageInGB": m89,
         "strongStrength": MessageLookupByLibrary.simpleMessage("Starkt"),
         "subscribe": MessageLookupByLibrary.simpleMessage("Prenumerera"),
         "subscribeToEnableSharing": MessageLookupByLibrary.simpleMessage(
@@ -633,12 +625,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Återställningsnyckeln du angav är felaktig"),
         "theme": MessageLookupByLibrary.simpleMessage("Tema"),
-        "theyAlsoGetXGb": m39,
+        "theyAlsoGetXGb": m95,
         "thisCanBeUsedToRecoverYourAccountIfYou":
             MessageLookupByLibrary.simpleMessage(
                 "Detta kan användas för att återställa ditt konto om du förlorar din andra faktor"),
         "thisDevice": MessageLookupByLibrary.simpleMessage("Den här enheten"),
-        "thisIsPersonVerificationId": m40,
+        "thisIsPersonVerificationId": m96,
         "thisIsYourVerificationId": MessageLookupByLibrary.simpleMessage(
             "Detta är ditt verifierings-ID"),
         "thisWillLogYouOutOfTheFollowingDevice":
@@ -666,7 +658,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "updatingFolderSelection":
             MessageLookupByLibrary.simpleMessage("Uppdaterar mappval..."),
         "upgrade": MessageLookupByLibrary.simpleMessage("Uppgradera"),
-        "uploadingMultipleMemories": m111,
+        "uploadingMultipleMemories": m105,
         "uploadingSingleMemory":
             MessageLookupByLibrary.simpleMessage("Bevarar 1 minne..."),
         "usableReferralStorageInfo": MessageLookupByLibrary.simpleMessage(
@@ -679,7 +671,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "verify": MessageLookupByLibrary.simpleMessage("Bekräfta"),
         "verifyEmail":
             MessageLookupByLibrary.simpleMessage("Bekräfta e-postadress"),
-        "verifyEmailID": m42,
+        "verifyEmailID": m107,
         "verifyPasskey":
             MessageLookupByLibrary.simpleMessage("Verifiera nyckel"),
         "verifyPassword":
@@ -695,12 +687,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "viewRecoveryKey":
             MessageLookupByLibrary.simpleMessage("Visa återställningsnyckel"),
         "viewer": MessageLookupByLibrary.simpleMessage("Bildvy"),
-        "weHaveSendEmailTo": m43,
+        "weHaveSendEmailTo": m109,
         "weakStrength": MessageLookupByLibrary.simpleMessage("Svagt"),
         "welcomeBack":
             MessageLookupByLibrary.simpleMessage("Välkommen tillbaka!"),
         "whatsNew": MessageLookupByLibrary.simpleMessage("Nyheter"),
-        "yearsAgo": m44,
+        "yearsAgo": m110,
         "yes": MessageLookupByLibrary.simpleMessage("Ja"),
         "yesCancel": MessageLookupByLibrary.simpleMessage("Ja, avbryt"),
         "yesConvertToViewer":
